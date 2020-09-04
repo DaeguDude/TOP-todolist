@@ -82,3 +82,5 @@ After this, don't try to look at responsive design again. Because, the point of 
 ### Let's have a look at how to manage git workflow.
 And then, now dive into the todo project!
 Functionality first, css later!
+
+- [Git workflow strategies](https://www.youtube.com/watch?v=aJnFGMclhU8&ab_channel=GitHubTraining%26Guides)
