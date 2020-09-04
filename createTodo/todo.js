@@ -2,9 +2,9 @@ const TaskFactory = (_title, _description, _dueDate, _priority) => {
   let _subtasks = [];
 
   const setTitle = (title) => { _title = title; }
-  const setDescription = (description) => _description;
-  const setDueDate = (date) => _dueDate;
-  const setPriority = (p) => _priority;
+  const setDescription = (description) => { _description = description }
+  const setDueDate = (date) => { _dueDate = date; }
+  const setPriority = (priority) => { _priority = priority }
   
   const getTitle = () => _title;
   const getDescription = () => _description;
