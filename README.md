@@ -84,3 +84,37 @@ And then, now dive into the todo project!
 Functionality first, css later!
 
 - [Git workflow strategies](https://www.youtube.com/watch?v=aJnFGMclhU8&ab_channel=GitHubTraining%26Guides)
+
+## 09/06
+
+### Working on....
+
+> Hello guys, I have a question. How can you know some element's status continuously in Javascript?
+
+What I'm trying to do here, I want to enable & disable the button depending on if textarea has any character or not.
+So if textarea has no text, the button will be disabled. But if textarea has any text, it will be enabled.
+
+I can disable, enable the button, and I can also check if textarea is empty or not. 
+But my problem is, my button has to be enabled and disabled back and forth depending on textarea's length.
+But I'm not too sure how you can continuously tracking the length of it.
+
+**HAVE A LOOK AT THIS**
+- https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+- https://www.w3schools.com/jsref/event_oninput.asp
+
+
+```javascript
+let titleTextArea = document.querySelector('div.task-modal textarea#task-title');
+
+const handleChange = (e) => {
+    let textAreaLength = titleTextArea.value.length;
+    if(textAreaLength > 0) {
+        console.log('Not empty');
+    } else {
+        console.log('empty');
+    }
+}
+
+titleTextArea.oninput = handleChange;
+```
