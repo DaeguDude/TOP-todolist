@@ -1,5 +1,7 @@
-const TaskFactory = (_title, _description, _dueDate, _priority) => {
+const TaskFactory = (_title, _description) => {
   let _subtasks = [];
+  let _dueDate;
+  let _priority;
 
   const setTitle = (title) => { _title = title; }
   const setDescription = (description) => { _description = description }
