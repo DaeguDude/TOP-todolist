@@ -118,3 +118,8 @@ const handleChange = (e) => {
 
 titleTextArea.oninput = handleChange;
 ```
+
+## 09/08
+
+- Enable & Disable the button if input is more than 0, and vice versa.
+- Make a pubsub module, so that each module can talk to each other through pubsub
