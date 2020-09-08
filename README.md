@@ -121,5 +121,38 @@ titleTextArea.oninput = handleChange;
 
 ## 09/08
 
-- Enable & Disable the button if input is more than 0, and vice versa.
-- Make a pubsub module, so that each module can talk to each other through pubsub
+- ~~Enable & Disable the button if input is more than 0, and vice versa.~~
+- ~~Make a pubsub module, so that each module can talk to each other through pubsub~~
+
+### TODAY REVIEW
+
+- worked hours[4 pomodoro]
+
+**Things to work on**
+
+Now I have my Pubsub module in the code. However, the problem is this.
+
+1. While the module can talk to each other through pubsub, what if argument is more than one value?
+
+For example..
+```javascript
+// Display.js
+Pubsub.emit('taskCreated', title, notes);
+
+// Task.js
+Pubsub.subscribe('taskCreated', taskFactory)
+
+// Pubsub.js
+const emit = (eventName, data) => {    
+  events[eventName].forEach((func) => {
+    func(data);
+  })
+}
+```
+
+Like, for the function that needs more than one argument, like taskFactory does... what should I do?
+
+Modify taskFactory function to just accept one argument? or modify pubsub.emit function to accept more argument?
+
+
+

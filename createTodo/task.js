@@ -1,3 +1,5 @@
+// import { Pubsub } from './Pubsub.js'
+
 const Task = (() => {
   const TaskFactory = (_title, _description) => {
     let _subtasks = [];
@@ -32,6 +34,9 @@ const Task = (() => {
      }
   }
 
+  // Listening to 'taskCreated' topic
+  Pubsub.subscribe('taskCreated', TaskFactory)
+
   // Task Module
   return {
     TaskFactory
@@ -39,6 +44,3 @@ const Task = (() => {
 })()
 
 
-
-let todo1 = Task.TaskFactory('Gym Project', '5~7pm');
-console.log(todo1);

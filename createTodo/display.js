@@ -1,3 +1,5 @@
+// import { Pubsub } from './Pubsub.js'
+
 const Display = (() => {
 
   const initialSetup = () => {
@@ -19,7 +21,7 @@ const Display = (() => {
 
   const startListeningCreatingTask = (btn) => {
     btn.addEventListener('click', () => {
-      console.log('Task Created');
+      Pubsub.emit('taskCreated', 'Gym-Project')
     })
   }
 
@@ -93,4 +95,6 @@ const Display = (() => {
 })();
 
 Display.initialSetup();
+
+
 
