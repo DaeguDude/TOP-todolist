@@ -154,5 +154,17 @@ Like, for the function that needs more than one argument, like taskFactory does.
 
 Modify taskFactory function to just accept one argument? or modify pubsub.emit function to accept more argument?
 
+## 09/09
+
+Okay. For now on, I will ditch the Pubsub design. Rather, I will use custom event that's provided by JS.
+
+[Creating and triggering events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events)
+
+### TODAY REVIEW
+
+Okay. I guess I kind of understood how this triggering works. But I'm not too sure if this is really useful. So I will try it on tomorrow.
+
+PLEASE REFER TO THE NOTE THAT HAS EXPLANATION FOR TRIGGERING EVENTS
+
 
 
