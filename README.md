@@ -166,5 +166,9 @@ Okay. I guess I kind of understood how this triggering works. But I'm not too su
 
 PLEASE REFER TO THE NOTE THAT HAS EXPLANATION FOR TRIGGERING EVENTS
 
+For the deeper understanding, also look at this.
+
+- [dispatchEvents - javascriptInfo](https://javascript.info/dispatch-events)
+
 
 
