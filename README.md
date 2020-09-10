@@ -171,4 +171,13 @@ For the deeper understanding, also look at this.
 - [dispatchEvents - javascriptInfo](https://javascript.info/dispatch-events)
 
 
+## 09/10
 
+So, is there an actual case that use Javascript custom Events? Can I benefit from this pattern?
+
+- [Javascript Pattern: Custom Events](https://www.youtube.com/watch?v=KuEVmf-Fxk0&ab_channel=AllThingsJavaScript%2CLLC)
+
+So, it actually seems to exist. Now there are things I need to do.
+
+1. Create a custom Event 'taskCreated' from Display Module.
+2. Make taskFactory listening to that Event. So when it happens, it will make a task.

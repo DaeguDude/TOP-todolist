@@ -1,6 +1,6 @@
-// import { Pubsub } from './Pubsub.js'
-
 const Task = (() => {
+  let taskList = [];
+
   const TaskFactory = (_title, _description) => {
     let _subtasks = [];
     let _dueDate;
@@ -34,13 +34,28 @@ const Task = (() => {
      }
   }
 
-  // Listening to 'taskCreated' topic
-  Pubsub.subscribe('taskCreated', TaskFactory)
+  const addTask = (task) => {
+    taskList.push(task);
+  }
 
   // Task Module
   return {
+    taskList,
+    addTask,
     TaskFactory
   }
-})()
+})();
+
+
+document.addEventListener('taskCreated', (e) => {
+  console.log(e.detail);
+
+  
+  let title = Object.values(e.detail)[0];
+  let description = Object.values(e.detail)[1];
+  let task = Task.TaskFactory(title, description);
+  Task.addTask(task);
+  console.log(Task.taskList);
+})
 
 
