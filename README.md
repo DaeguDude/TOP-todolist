@@ -179,5 +179,16 @@ So, is there an actual case that use Javascript custom Events? Can I benefit fro
 
 So, it actually seems to exist. Now there are things I need to do.
 
-1. Create a custom Event 'taskCreated' from Display Module.
-2. Make taskFactory listening to that Event. So when it happens, it will make a task.
+1. ~~Create a custom Event 'taskCreated' from Display Module.~~
+2. ~~Make taskFactory listening to that Event. So when it happens, it will make a task.~~
+
+### TODAY REVIEW
+
+> I've finished making a feature for popup box. Now It can dispatch the custom event 'taskCreated', and taskFactory is listening to that event, meaning it will create a task.
+
+Wow, I guess next is... To create a general layout for when starting? I am not too sure. Check out the instructions.
+
+## 09/11
+
+> Check out the odin instruction. If nothing special, starting to make landing page.
+
