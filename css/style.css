@@ -1,3 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/img/main-background.jpg');
+  background-position: center;
+}
+
 .container {
   height: 100vh;
+
+  display: flex;
 }
+
+header {
+  width: 280px;
+
+  background: #fff;
+}
+
+.header-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container .items {
+  border: 1px solid gray;
+}
+
+.header-container .title {
+  height: 120px;
+}
+
+.header-container .create-task-btn {
+  height: 80px;
+}
+
+.header-container .category {
+  height: 200px;
+}
+
+main {
+  flex: 1;
+
+  background: lightblue;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* let's add some background */
