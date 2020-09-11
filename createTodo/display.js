@@ -108,8 +108,6 @@ const Display = (() => {
     }
   }
 
-
-
   return {
     taskModalBox
   }
