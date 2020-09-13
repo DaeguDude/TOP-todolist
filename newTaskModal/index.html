@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
+  <div class="task-container">
     <div class="task-modal">
       <div class="title-box modal-items">
         <span>TITLE</span>
@@ -17,12 +17,16 @@
         <span>NOTES</span>
         <textarea name="description" id="task-description"></textarea>
       </div>
+      <div class="category-box modal-items">
+        <span>Category</span>
+        <select id="category">
+          <option value="plan">Plan</option>
+        </select>
+      </div>
       <div class="create-task-box modal-items">
         <button class="add-task-btn">Add Task</button>
       </div>
     </div>
   </div>
 </body>
-<script type="module" src="task.js"></script>
-<script type="module" src="display.js"></script>
 </html>

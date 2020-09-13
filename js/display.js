@@ -78,6 +78,21 @@ const Display = (() => {
     }
   })();
 
+  const landingPage = (() => {
+
+    const getCreateTaskBtn = () => {
+      let createTaskBtn = document.querySelector('button#create-task');
+    }
+
+    // If button is clicked, show popup box.
+    button.addEventListener('click', )
+
+    const enableCreateTaskBtn = () => {
+      getCreateTaskBtn()
+    }
+    
+  })();
+
   /**
    * Give element power to control the button.
    */
@@ -109,11 +124,15 @@ const Display = (() => {
   }
 
   return {
+    landingPage,
     taskModalBox
+    
   }
 })();
 
-Display.taskModalBox.initialSetup();
+Display.landingPage;
+// Display.taskModalBox.initialSetup();
+
 
 
 
