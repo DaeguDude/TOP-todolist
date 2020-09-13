@@ -4,14 +4,58 @@
   box-sizing: border-box;
 }
 
-.container {
-  background: darkgray;
-  height: 100vh;
+.task-container {
+  /* To be removed for later */
+  background: gray;
+  
+  width: 600px;
+  height: 450px;
+  border-radius: 10px;
+  
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  
 }
+
+.task-container .items {
+  border: 1px solid white;
+}
+
+.task-container .main {
+  height: 380px;
+}
+
+.task-container .main .left {
+  /* To be removed */
+  border-right: 1px solid white;
+
+
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.task-container .main .left .title-box {
+  /* To be removed */
+  border: 1px solid white;
+}
+
+.task-container .main .left .description-box {
+  /* To be removed */
+  border: 1px solid white;
+}
+
+.task-container .bottom {
+  height: 70px;
+}
+
+
+
+
+/* 
 
 .task-modal {
   background: #fff;
@@ -63,4 +107,4 @@
 }
 
 
-
+ */

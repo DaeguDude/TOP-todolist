@@ -85,7 +85,9 @@ const Display = (() => {
     }
 
     // If button is clicked, show popup box.
-    button.addEventListener('click', )
+    button.addEventListener('click', ) {
+      
+    }
 
     const enableCreateTaskBtn = () => {
       getCreateTaskBtn()

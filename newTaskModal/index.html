@@ -8,16 +8,20 @@
 </head>
 <body>
   <div class="task-container">
-    <div class="task-modal">
-      <div class="title-box modal-items">
-        <span>TITLE</span>
-        <textarea name="title" id="task-title"></textarea>
+    <div class="main items">
+      <div class="left">
+        <div class="title-box">
+          <span>TITLE</span>
+          <textarea name="title" id="task-title"></textarea>
+        </div>
+        <div class="description-box">
+          <span>NOTES</span>
+          <textarea name="description" id="task-description"></textarea>
+        </div>
       </div>
-      <div class="description-box modal-items">
-        <span>NOTES</span>
-        <textarea name="description" id="task-description"></textarea>
-      </div>
-      <div class="category-box modal-items">
+      <div class="right"></div>
+      
+      <!-- <div class="category-box modal-items">
         <span>Category</span>
         <select id="category">
           <option value="plan">Plan</option>
@@ -25,7 +29,11 @@
       </div>
       <div class="create-task-box modal-items">
         <button class="add-task-btn">Add Task</button>
-      </div>
+      </div> -->
+    </div>
+
+    <div class="bottom items">
+
     </div>
   </div>
 </body>
