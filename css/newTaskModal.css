@@ -4,20 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-image: url('/img/main-background.jpg');
-  background-position: center;
-}
-
-/* Global Settings */
-
-/* A has no undertext and default color */
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-/* Default Setting */
 
 button {
   background-color: #0080ff;
@@ -27,18 +13,7 @@ button {
   border-color: #0080ff;
 }
 
-button:hover {
-  background-color: #4ca6ff;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-ul {
-  list-style: none;
-}
-
+/* Utility Classes */ 
 textarea {
   resize: none; /* not resizable */
   outline: none;
@@ -50,95 +25,6 @@ textarea:focus {
   outline: none;
   border: none;
 }
-
-/* CSS styling for Main Page */
-.container {
-  height: 100vh;
-
-  display: flex;
-}
-
-header {
-  width: 280px;
-
-  background: #fff;
-}
-
-.header-container {
-  width: 100%;
-  height: 100%;
-  padding-left: 20px;
-  padding-top: 20px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.header-container .items {
-  border: 1px solid gray;
-}
-
-.header-container .title {
-  height: 120px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.header-container .title span {
-  /* border: 1px solid gray; */
-}
-
-.header-container .my-name {
-  font-size: 1.5rem;
-}
-
-.header-container .social-media-items {
-  font-size: 1.25rem;
-}
-
-
-
-.header-container .create-task-btn-box {
-  height: 80px;
-
-  display: flex;
-  align-items: center;
-}
-
-.header-container #create-task {
-  width: 75%;
-  height: 50%;
-  
-  border-radius: 1rem;
-}
-
-.header-container .category {
-  height: 200px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.category span {
-  font-size: 1.5rem;
-  font-weight: 550;
-}
-
-main {
-  flex: 1;
-
-  background: lightblue;
-}
-
-.main-container {
-  width: 100%;
-  height: 100%;
-}
-
-/* ------------------------ */
-/* newTaskModal BOX */
 
 .task-container {
   position: absolute;

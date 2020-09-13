@@ -4,13 +4,43 @@
   box-sizing: border-box;
 }
 
+
+button {
+  background-color: #0080ff;
+  color: #fff;
+  cursor: pointer;
+
+  border-color: #0080ff;
+}
+
+/* Utility Classes */ 
+textarea {
+  resize: none; /* not resizable */
+  outline: none;
+  border: none;
+}
+
+textarea:focus {
+  background: #e5e5e5;
+  outline: none;
+  border: none;
+}
+
 .task-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /* To be removed for later */
-  background: gray;
+  background: #fff;
+  border: 1px solid black;
   
   width: 600px;
   height: 450px;
   border-radius: 10px;
+
+  /* Shadow on all corners */
+  box-shadow: 0px 0px 8px 4px #808080;
   
 
   display: flex;
@@ -18,23 +48,18 @@
   
 }
 
-.task-container .items {
-  border: 1px solid white;
-}
-
 .task-container .main {
   height: 380px;
+  padding: 10px;
 
   display: flex;
 }
 
 .task-container .main .left {
-  /* To be removed */
-  border-right: 1px solid white;
-
-
   width: 80%;
   height: 100%;
+  border-right: 1px solid #808080;
+  padding-right: 20px;
 
   display: flex;
   flex-direction: column;
@@ -48,10 +73,12 @@
   flex-direction: column;
 }
 
-.main .left .description-box {
-  /* To be removed */
-  border: 1px solid white;
+.title-box textarea {
+  height: 2rem;
+  font-size: 2rem;
+}
 
+.main .left .description-box {
   display: flex;
   flex-direction: column;
 }
@@ -59,17 +86,19 @@
 .task-container .main .right {
   width: 20%;
   height: 100%;
+  padding-left: 10px;
 
   display: flex;
   flex-direction: column;
 }
 
 .main .right .category-box {
-  /* To be removed */
-  border: 1px solid white;
-
   display: flex;
   flex-direction: column;
+}
+
+.category-box select {
+  margin-top: 5px;
 }
 
 .task-container .bottom {
@@ -85,6 +114,10 @@
 .bottom .create-task-box .add-task-btn {
   height: 100%;
   width: 100%;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+
+  box-shadow: 0px -5px 5px 0px #808080;
 }
 
 

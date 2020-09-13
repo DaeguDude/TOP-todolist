@@ -194,3 +194,7 @@ Wow, I guess next is... To create a general layout for when starting? I am not t
 
 ## 09/13
 
+> Working on making 'taskModal.js', which will make a HTML content for newTaskModal
+
+It's getting quite complicated, but let's keep it simple. Just focus on one thing at a time.
+
