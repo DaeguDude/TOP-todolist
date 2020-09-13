@@ -192,3 +192,5 @@ Wow, I guess next is... To create a general layout for when starting? I am not t
 
 > Check out the odin instruction. If nothing special, starting to make landing page.
 
+## 09/13
+

@@ -9,6 +9,37 @@ body {
   background-position: center;
 }
 
+/* Global Settings */
+
+/* A has no undertext and default color */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Utility Classes */
+
+button {
+  background-color: #0080ff;
+  color: #fff;
+  cursor: pointer;
+
+  border-color: #0080ff;
+}
+
+button:hover {
+  background-color: #4ca6ff;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+ul {
+  list-style: none;
+}
+
+/* CSS styling for Main Page */
 .container {
   height: 100vh;
 
@@ -24,6 +55,8 @@ header {
 .header-container {
   width: 100%;
   height: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
 
   display: flex;
   flex-direction: column;
@@ -35,14 +68,50 @@ header {
 
 .header-container .title {
   height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.header-container .create-task-btn {
+.header-container .title span {
+  /* border: 1px solid gray; */
+}
+
+.header-container .my-name {
+  font-size: 1.5rem;
+}
+
+.header-container .social-media-items {
+  font-size: 1.25rem;
+}
+
+
+
+.header-container .create-task-btn-box {
   height: 80px;
+
+  display: flex;
+  align-items: center;
+}
+
+.header-container #create-task {
+  width: 75%;
+  height: 50%;
+  
+  border-radius: 1rem;
 }
 
 .header-container .category {
   height: 200px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.category span {
+  font-size: 1.5rem;
+  font-weight: 550;
 }
 
 main {
