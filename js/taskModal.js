@@ -13,7 +13,7 @@ const getTaskModalContent = () => {
   
   let bottom = document.createElement('div');
   bottom.setAttribute('class', 'bottom items');
-  
+
   
   const TitleBox = () => {
     let titleBox = document.createElement('div');
@@ -99,6 +99,8 @@ const getTaskModalContent = () => {
 
   return taskContainer;
 }
+
+export { getTaskModalContent }
 
 
 

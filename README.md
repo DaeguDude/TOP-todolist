@@ -198,3 +198,31 @@ Wow, I guess next is... To create a general layout for when starting? I am not t
 
 It's getting quite complicated, but let's keep it simple. Just focus on one thing at a time.
 
+## 09/14
+
+### TO-DO
+
+- ~~Make a `taskModal.js` that will make a HTML content for task modal box.~~
+
+### TODAY REVIEW
+
+I've worked on now import/export from each modules, so make modules to work each other.
+
+Now there are some problems to work on...
+
+- taskModal.js NEEDS a category list, to show that category in modal box.
+- How can I set this process of...
+  - create a category
+  - category is added in task.js
+  - taskModal.js retrives information of that category, and show it in the modal box.
+
+## 09/15
+
+### TO-DO
+
+- taskModal.js NEEDS a category list, to show that category in modal box.
+- How can I set this process of...
+  - create a category
+  - category is added in task.js
+  - taskModal.js retrives information of that category, and show it in the modal box.
+

@@ -1,5 +1,6 @@
 const Task = (() => {
   let taskList = [];
+  let taskCategory = [];
 
   const TaskFactory = (_title, _description, _category) => {
     let _subtasks = [];
@@ -37,6 +38,8 @@ const Task = (() => {
       addSubtask
      }
   }
+
+  
 
   const addTask = (task) => {
     taskList.push(task);
