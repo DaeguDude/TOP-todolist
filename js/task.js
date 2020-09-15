@@ -1,6 +1,6 @@
 const Task = (() => {
   let taskList = [];
-  let taskCategory = [];
+  let taskCategory = ['plan'];
 
   const TaskFactory = (_title, _description, _category) => {
     let _subtasks = [];
@@ -39,10 +39,12 @@ const Task = (() => {
      }
   }
 
-  
-
   const addTask = (task) => {
     taskList.push(task);
+  }
+
+  const addCategory = (category) => {
+    taskCategory.push(category);
   }
 
   // Task Module
