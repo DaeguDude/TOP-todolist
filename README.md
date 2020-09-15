@@ -220,9 +220,16 @@ Now there are some problems to work on...
 
 ### TO-DO
 
-- taskModal.js NEEDS a category list, to show that category in modal box.
-- How can I set this process of...
-  - create a category
-  - category is added in task.js
-  - taskModal.js retrives information of that category, and show it in the modal box.
+- When button is clicked...load Modal Content
+  - Should eventListener be enclosed as a function in a module? Or is it okay to left as is?
+
+![question1](./img/question1.png)
+
+**MY FIRST EXAMPLE IS FINE. Just leave EventListener open in a module**
+
+- How to get many categories are there when loading popup?
+
+
+
+
 

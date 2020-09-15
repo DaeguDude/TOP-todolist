@@ -1,4 +1,4 @@
-const getTaskModalContent = () => {
+const loadTaskModal = () => {
   let taskContainer = document.createElement('div');
   taskContainer.setAttribute('class', 'task-container');
   
@@ -100,7 +100,7 @@ const getTaskModalContent = () => {
   return taskContainer;
 }
 
-export { getTaskModalContent }
+export { loadTaskModal }
 
 
 
