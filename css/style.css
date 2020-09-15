@@ -128,9 +128,26 @@ header {
   flex-direction: column;
 }
 
-.category span {
+.category p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category p span {
   font-size: 1.5rem;
   font-weight: 550;
+}
+
+/* create category clicked */
+.category p i {
+  color: #5a5a5a;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.category p i:active {
+  transform: scale(0.95);
 }
 
 main {
@@ -245,5 +262,55 @@ main {
 /* ------------------------ */
 /* categoryModal BOX */
 /* ------------------------ */
+
+
+
+/* MAIN START */
+
+.category-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* To be removed for later */
+  background: #fff;
+  
+  width: 400px;
+  height: 160px;
+  border-radius: 10px;
+
+  /* Shadow on all corners */
+  box-shadow: 0px 0px 8px 4px #808080;
+  
+
+  display: flex;
+  flex-direction: column;
+}
+
+.category-container .main {  
+  height: 110px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main textarea {
+  margin-top: 0.5rem;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.category-container .btn-box {  
+  height: 50px;
+}
+
+.btn-box #create-category-btn {
+  height: 100%;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+
+  box-shadow: 0px -5px 5px 0px #808080;
+}
 
 

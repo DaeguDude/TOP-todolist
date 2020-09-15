@@ -230,6 +230,11 @@ Now there are some problems to work on...
 - How to get many categories are there when loading popup?
 
 
+### REVIEWS
+
+DO NOT TRY TO BE CLEVER, EVEN IF CODE IS INEFFICIENT, IF WORKS, MOVE ON
+
+
 
 
 
