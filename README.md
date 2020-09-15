@@ -227,12 +227,23 @@ Now there are some problems to work on...
 
 **MY FIRST EXAMPLE IS FINE. Just leave EventListener open in a module**
 
-- How to get many categories are there when loading popup?
-
-
 ### REVIEWS
 
 DO NOT TRY TO BE CLEVER, EVEN IF CODE IS INEFFICIENT, IF WORKS, MOVE ON
+
+It's been working fine. I guess I will have to make a modal to close now if outside modal is clicked.
+
+## 09/16
+
+### TO-DO
+
+1. Make a logic that will shut down modal when outside modal is clicked.
+  - Background gets darker
+  - If outside modal is clicked, shut down modal, and remove from HTML
+
+2. If category created...
+  - Add to Landing page <ul>
+  - ADD to category in task.js
 
 
 
