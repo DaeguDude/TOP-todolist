@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Utility Classes */ 
+textarea {
+  resize: none; /* not resizable */
+  outline: none;
+  border: none;
+}
+
+textarea:focus {
+  background: #e5e5e5;
+  outline: none;
+  border: none;
+}
+
+.label-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+
+/* MAIN START */
+
+.category-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* To be removed for later */
+  background: #fff;
+  
+  width: 400px;
+  height: 160px;
+  border-radius: 10px;
+
+  /* Shadow on all corners */
+  box-shadow: 0px 0px 8px 4px #808080;
+  
+
+  display: flex;
+  flex-direction: column;
+}
+
+.category-container .main {  
+  height: 110px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main textarea {
+  margin-top: 0.5rem;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.category-container .btn-box {  
+  height: 50px;
+}
+
+.btn-box #create-category-btn {
+  height: 100%;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+
+  box-shadow: 0px -5px 5px 0px #808080;
+}
+
+

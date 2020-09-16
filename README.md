@@ -234,6 +234,16 @@ Now there are some problems to work on...
 
 DO NOT TRY TO BE CLEVER, EVEN IF CODE IS INEFFICIENT, IF WORKS, MOVE ON
 
+## 09/16
+
+Okay. I guess now I understand how closing modal works...
+
+onclick: you give some power on the target, to execute some function when that target is clicked. And when target is clicked, it will pass the mouseEvent as an argument to the function.
+
+mouseEvent: It has an information about the target, which means where it was clicked. It can be any tag. Event.target
+
+Event.target: object that event was dispatched to.
+
 
 
 
