@@ -244,6 +244,14 @@ mouseEvent: It has an information about the target, which means where it was cli
 
 Event.target: object that event was dispatched to.
 
+## 09/17
+
+I am working on Modal for category and task.
+Both of boxes should be closed when outside of modal is clicked.
+
+So how do I enable this logic? I already have a logic for closing the modal,
+but I am not sure how I can stop/start this `window.onclick` logic.
+
 
 
 

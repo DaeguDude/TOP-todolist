@@ -13,6 +13,12 @@ button {
   border-color: #0080ff;
 }
 
+button:disabled {
+  background: #efefef;
+  cursor: default;
+  border: none;
+}
+
 /* Utility Classes */ 
 textarea {
   resize: none; /* not resizable */
@@ -29,6 +35,15 @@ textarea:focus {
 .label-text {
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 

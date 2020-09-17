@@ -1,4 +1,4 @@
-const taskModalBox = (() => {
+const TaskModalBox = (() => {
   const initialSetup = () => {
     let addTaskBtn = getAddTaskBtn();
     let titleArea = getTitleArea();
