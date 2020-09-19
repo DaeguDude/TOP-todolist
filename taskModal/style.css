@@ -13,6 +13,12 @@ button {
   border-color: #0080ff;
 }
 
+button:disabled {
+  background: #efefef;
+  cursor: default;
+  border: none;
+}
+
 /* Utility Classes */ 
 textarea {
   resize: none; /* not resizable */

@@ -1,4 +1,7 @@
-const getTaskModalContent = () => {
+const loadTaskModal = () => {
+  let modal = document.createElement('div');
+  modal.setAttribute('class', 'modal');
+
   let taskContainer = document.createElement('div');
   taskContainer.setAttribute('class', 'task-container');
   
@@ -13,7 +16,7 @@ const getTaskModalContent = () => {
   
   let bottom = document.createElement('div');
   bottom.setAttribute('class', 'bottom items');
-  
+
   
   const TitleBox = () => {
     let titleBox = document.createElement('div');
@@ -97,8 +100,12 @@ const getTaskModalContent = () => {
   
   right.appendChild(CategoryBox());
 
-  return taskContainer;
+  modal.appendChild(taskContainer);
+
+  return modal;
 }
+
+export { loadTaskModal }
 
 
 

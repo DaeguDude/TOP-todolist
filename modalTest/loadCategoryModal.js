@@ -45,6 +45,14 @@ const loadCategoryModal = () => {
 
 document.querySelector('body').appendChild(loadCategoryModal());
 
+let modal = document.querySelector('.modal');
+let categoryContainer = document.querySelector('div.category-container')
+window.onclick = (event) => {
+    if (event.taraget === categoryContainer) {
+        categoryContainer.remove();
+    }
+}
+
 export { loadCategoryModal }
 
 

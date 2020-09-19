@@ -1,6 +1,10 @@
 const loadCategoryModal = () => {
+  let modal = document.createElement('div');
+  modal.setAttribute('class', 'modal');
+
   let categoryContainer = document.createElement('div');
   categoryContainer.setAttribute('class', 'category-container');
+ 
   
   const getMain = () => {
     let main = document.createElement('div');
@@ -34,8 +38,9 @@ const loadCategoryModal = () => {
 
   categoryContainer.appendChild(getMain());
   categoryContainer.appendChild(getBtnBox());
+  modal.appendChild(categoryContainer);
 
-  return categoryContainer;
+  return modal;
 }
 
 export { loadCategoryModal }

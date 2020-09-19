@@ -1,4 +1,7 @@
 const loadTaskModal = () => {
+  let modal = document.createElement('div');
+  modal.setAttribute('class', 'modal');
+
   let taskContainer = document.createElement('div');
   taskContainer.setAttribute('class', 'task-container');
   
@@ -97,7 +100,9 @@ const loadTaskModal = () => {
   
   right.appendChild(CategoryBox());
 
-  return taskContainer;
+  modal.appendChild(taskContainer);
+
+  return modal;
 }
 
 export { loadTaskModal }
