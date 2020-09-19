@@ -33,7 +33,7 @@ const TaskModal = (() => {
   }
 
   const getSelectCategory = () => {
-    let selectCategory = document.querySelector('select#category');
+    let selectCategory = document.querySelector('select.category');
     return selectCategory
   }
 

@@ -1,4 +1,5 @@
-const loadTaskModal = () => {
+// To create a drop down list of categories, taskCategories parameter exist
+const loadTaskModal = (taskCategories) => {
   let modal = document.createElement('div');
   modal.setAttribute('class', 'modal');
 
@@ -63,12 +64,15 @@ const loadTaskModal = () => {
   
     let category = document.createElement('select');
     category.setAttribute('class', 'category');
-  
-    let option = document.createElement('option');
-    option.setAttribute('value', 'plan');
-    option.innerText = 'Plan';
-  
-    category.appendChild(option);
+    
+    // To create a list of categories
+    taskCategories.forEach(categoryName => {
+      let option = document.createElement('option');
+      option.setAttribute('value', categoryName);
+      option.innerText = categoryName;
+      category.appendChild(option);
+    })
+
     categoryBox.appendChild(span);
     categoryBox.appendChild(category);
   

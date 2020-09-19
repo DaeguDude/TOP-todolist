@@ -252,6 +252,19 @@ Both of boxes should be closed when outside of modal is clicked.
 So how do I enable this logic? I already have a logic for closing the modal,
 but I am not sure how I can stop/start this `window.onclick` logic.
 
+## 09/19
+
+I've worked on a lot of things today. It feels like now it is clicking.
+It was definitely helpful that I visualized what was going on, so I will keep visualizing it. 
+
+## 09/20
+
+PLEASE REFER TO THE NOTES TO SEE WHAT'S GOING ON.
+
+## TODO
+
+I need to work on Adding Task
+
 
 
 

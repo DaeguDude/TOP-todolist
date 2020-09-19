@@ -64,6 +64,15 @@ textarea:focus {
   font-weight: 400;
 }
 
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
 /* CSS styling for Main Page */
 .container {
   height: 100vh;
@@ -301,7 +310,7 @@ main {
   flex-direction: column;
 }
 
-.main textarea {
+.category-container .main textarea {
   margin-top: 0.5rem;
   height: 2rem;
   font-size: 2rem;

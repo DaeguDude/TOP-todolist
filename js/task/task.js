@@ -1,6 +1,6 @@
 const Task = (() => {
   let taskList = [];
-  let taskCategory = ['plan'];
+  let taskCategories = ['plan', 'The Odin Project', 'Gym'];
 
   const TaskFactory = (_title, _description, _category) => {
     let _subtasks = [];
@@ -44,27 +44,23 @@ const Task = (() => {
   }
 
   const addCategory = (category) => {
-    taskCategory.push(category);
+    taskCategories.push(category);
   }
+
+  const getTaskCategories = () => taskCategories;
 
   // Task Module
   return {
     taskList,
     addTask,
-    TaskFactory
+    TaskFactory,
+    addCategory,
+    getTaskCategories
   }
 })();
 
+export { Task };
 
-document.addEventListener('taskCreated', (e) => {
-  console.log(e.detail);
 
-  
-  let title = Object.values(e.detail)[0];
-  let description = Object.values(e.detail)[1];
-  let task = Task.TaskFactory(title, description);
-  Task.addTask(task);
-  console.log(Task.taskList);
-})
 
 

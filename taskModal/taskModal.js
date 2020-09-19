@@ -46,6 +46,7 @@ const TaskModal = (() => {
     return addTaskBtn;
   }
 
+  // Button will be enabled/disabled based on title area is empty or not
   const activateBtnController = () => {
     let addTaskBtn = getAddTaskBtn();
     let titleTextArea = getTitleTextArea();
@@ -54,13 +55,10 @@ const TaskModal = (() => {
     }) 
   }
 
-  /**
-   * When task modal is opened up first, it should be disabled because there's 
-   * no input yet. And then, I should activate the controller that will enable and
-   * disabled the button based on textarea's length.
-   */
+
   const initialSetup = () => {
-    disableAddTaskBtn();
+    // disable the button if modal is just opened, meaning textarea empty.
+    disableAddTaskBtn();  
     activateBtnController();
   }
 
