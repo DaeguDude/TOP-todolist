@@ -39,7 +39,7 @@ const CategoryModal = (() => {
     }) 
   }
 
-  const initialSetup = () => {
+  const activateInitialSetup = () => {
     /**
      * When category modal is opened up first, it should be disabled because there's 
      * no input yet. And then, I should activate the controller that will enable and
@@ -52,7 +52,7 @@ const CategoryModal = (() => {
   return {
     getCreateBtn,
     getCategoryName,
-    initialSetup
+    activateInitialSetup
   }
 })();
 

@@ -59,7 +59,7 @@ const TaskModal = (() => {
    * no input yet. And then, I should activate the controller that will enable and
    * disabled the button based on textarea's length.
    */
-  const initialSetup = () => {
+  const activateInitialSetup = () => {
     disableAddTaskBtn();
     activateBtnController();
   }
@@ -73,7 +73,7 @@ const TaskModal = (() => {
     getTaskDescription,
     getTaskCategory,
 
-    initialSetup,
+    activateInitialSetup,
   }
 })();
 

@@ -8,9 +8,33 @@ import { LandingPage } from './landingPage.js';
 import { Task } from '../task/task.js';
 
 const Display = ((loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, LandingPage) => {
+  const getBodyNode = () => {
+    return document.querySelector('body');
+  }
+  
+  const showModal = (modal) => {
+    let body = getBodyNode();
+    body.appendChild(modal);
+  }
+
   const getModal = () => {
     return document.querySelector('.modal');
   }
+
+  const isTargetModal = (target) => {
+    let modal = getModal();
+    if (target === modal) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const closeModal = (modal) => {
+    modal.remove();
+  }
+
+  
 
   const disableBtn = (btn) => {
     btn.disabled = true;
@@ -39,14 +63,6 @@ const Display = ((loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, La
     body.appendChild(loadCategoryModal());
   }
  
-  const initialSetup = () => {
-    let createTaskBtn = document.querySelector('button#create-task');
-    createTaskBtn.addEventListener('click', openTaskModalBox);
-  
-    let createCategorySign = document.querySelector('i#create-category-symbol');
-    createCategorySign.addEventListener('click', openCategoryModalBox);
-  }
-
   return {
     loadCategoryModal,
     loadTaskModal,
@@ -54,7 +70,11 @@ const Display = ((loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, La
     TaskModal,
     LandingPage,
 
-    getModal
+    getModal,
+    showModal,
+    isTargetModal,
+    closeModal,
+    getBodyNode
   }
 })(loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, LandingPage);
 
