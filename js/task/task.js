@@ -1,3 +1,5 @@
+import { TaskFactory } from './taskFactory.js';
+
 const Task = (() => {
   let taskList = [];
   let taskCategories = ['plan', 'The Odin Project', 'Gym'];

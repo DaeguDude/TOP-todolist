@@ -1,4 +1,5 @@
 import { Display } from './display/display.js';
+import { TaskModal } from './display/modal/taskModal.js';
 import { Task } from './task/task.js';
 
 const MainControlCenter = (() => {
@@ -10,6 +11,8 @@ const MainControlCenter = (() => {
       let taskCategories = Task.getTaskCategories();
       let body = Display.getBodyNode();
       let taskModal = Display.loadTaskModal(taskCategories);
+      let addTaskBtn;
+
       
       // Should add closing modal feature as well
       taskModal.onclick = (event) => {
@@ -20,8 +23,22 @@ const MainControlCenter = (() => {
         }
       }
 
+
       Display.showModal(taskModal); 
       Display.TaskModal.activateInitialSetup();
+
+      // To add tasks to Task Module
+      addTaskBtn = Display.TaskModal.getAddTaskBtn();
+      addTaskBtn.addEventListener('click', () => {
+        let taskTitle = Display.TaskModal.getTaskTitle();
+        let taskDescription = Display.TaskModal.getTaskDescription();
+        let taskCategory = Display.TaskModal.getTaskCategory();
+        let task = Task.TaskFactory(taskTitle, taskDescription, taskCategory);
+        Task.addTask(task);
+        console.log(Task.taskList);
+        Display.closeModal(taskModal);
+      })
+      
     })
   }
 
@@ -31,6 +48,7 @@ const MainControlCenter = (() => {
     createCategoryBtn.addEventListener('click', () => {
       let body = Display.getBodyNode();
       let categoryModal = Display.loadCategoryModal();
+      let createBtnInCategoryModal;
       
       // Should add closing modal feature as well
       categoryModal.onclick = (event) => {
@@ -43,6 +61,15 @@ const MainControlCenter = (() => {
 
       Display.showModal(categoryModal); 
       Display.CategoryModal.activateInitialSetup();
+
+      // To add categories to Task, Display Module
+      createBtnInCategoryModal = Display.CategoryModal.getCreateBtn();
+      createBtnInCategoryModal.addEventListener('click', () => {
+        let categoryName = Display.CategoryModal.getCategoryName();
+        Task.addCategory(categoryName);
+        Display.addCategory(categoryName);
+        Display.closeModal(categoryModal);
+      })
     })
   }
 
@@ -55,54 +82,7 @@ const MainControlCenter = (() => {
 MainControlCenter.activateCreateTaskBtn();
 MainControlCenter.activateCreateCategoryBtn();
 
-  // let createTaskBtn = Display.LandingPage.getCreateTaskBtn();
-
-  // createTaskBtn.addEventListener('click', () => {
-  //   let taskCategories = Task.getTaskCategories();
-  //   let body = document.querySelector('body');
-  //   let taskModal = Display.loadTaskModal(taskCategories);
-
-  //   body.appendChild(taskModal);
-
-      
-  //   // For default setups to run - enable/disable button
-  //   Display.TaskModal.activateInitialSetup();
-    
-  //   // To add a task to the 'Task' Module
-  //   let addTaskBtn = Display.TaskModal.getAddTaskBtn();
-  //   addTaskBtn.addEventListener('click', () => {
-  //     let title = Display.TaskModal.getTaskTitle();
-  //     let description = Display.TaskModal.getTaskDescription();
-  //     let category = Display.TaskModal.getTaskCategory();
-  //     let task = Task.TaskFactory(title, description, category);
-  //     Task.addTask(task);
-      
-  //   })
-
   
-  // })
-
-  // let createCategoryBtn = Display.LandingPage.getCreateCategoryBtn();
-
-  // createCategoryBtn.addEventListener('click', () => {
-  //   Display.loadCategoryModal();
-  //   let body = document.querySelector('body');
-  //   let categoryModal = Display.loadCategoryModal();
-
-  //   body.appendChild(categoryModal);
-    
-  //   // For default setups to run - enable/disable button
-  //   Display.CategoryModal.initialSetup();
-
-  //   // To close the modal
-  //   categoryModal.onclick = (event) => {
-  //     if (event.target === categoryModal) {
-  //       categoryModal.remove();
-  //     }
-  //   }
-  // })
-  
-
 
 
 

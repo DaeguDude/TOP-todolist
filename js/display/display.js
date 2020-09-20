@@ -8,6 +8,25 @@ import { LandingPage } from './landingPage.js';
 import { Task } from '../task/task.js';
 
 const Display = ((loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, LandingPage) => {
+  const getCategoryUl = () => {
+    return document.querySelector('div.category ul');
+  }
+
+  const getEmptyElem = (elem) => {
+    return document.createElement(elem);
+  }
+
+  const addTextToElem = (li, text) => {
+    li.innerText = text;
+  }
+  
+  const addCategory = (categoryName) => {
+    let categoryUl = getCategoryUl();
+    let li = getEmptyElem('li');
+    addTextToElem(li, categoryName);
+    categoryUl.appendChild(li);
+  }
+  
   const getBodyNode = () => {
     return document.querySelector('body');
   }
@@ -74,7 +93,8 @@ const Display = ((loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, La
     showModal,
     isTargetModal,
     closeModal,
-    getBodyNode
+    getBodyNode,
+    addCategory
   }
 })(loadCategoryModal, loadTaskModal, CategoryModal, TaskModal, LandingPage);
 

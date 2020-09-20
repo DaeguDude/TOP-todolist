@@ -37,3 +37,5 @@ const TaskFactory = (_title, _description, _category) => {
     addSubtask
    }
 }
+
+export { TaskFactory };

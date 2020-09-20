@@ -265,6 +265,23 @@ PLEASE REFER TO THE NOTES TO SEE WHAT'S GOING ON.
 
 I need to work on Adding Task
 
+## REVIEW
+
+- My Todo now can open & close the modal
+- My Todo can add the task to Task Module
+- My Todo can add the category to Category Module
+
+## 09/21
+
+### TO DO
+
+**Ask Question about...**
+
+> You should separate your application logic (i.e. creating new todos, setting todos as complete, changing todo priority etc.) from the DOM-related stuff, so keep all of those things in separate modules.
+
+What does it exactly mean to keep it free from DOM related stuff?
+
+
 
 
 
