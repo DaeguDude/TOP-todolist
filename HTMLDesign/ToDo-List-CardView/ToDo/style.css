@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: lightslategrey; 
+}
+
+:root {
+  --ToDoList-title-font-size: 20px;
+  --Heading-font-weight: 700;
+  --ToDoList-cardview-border-radius: 8px;
+  --marker-color: #d8d8d8;
+  --marker-checked-color: #d8d8d8;
+  --ToDo-checked-color: #d8d8d8;
+  --ToDo-border-hovered-color: #0080ff;
+  --ToDo-border-color: #e2e1e1;
+}
+
+.ToDoList-CardView {
+  width: 360px;
+  height: 483px;
+  background: #fff;
+  border-radius: var(--ToDoList-cardview-border-radius);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+}
+
+.ToDoList-title {
+  min-height: 60px;
+  padding: 0 20px;
+  font-size: var(--ToDoList-title-font-size);
+  font-weight: var(--Heading-font-weight);
+
+  display: flex;
+  align-items: center;
+}
+
+.ToDoList-todos {
+  flex: 1 1 0;
+}
+
+.ToDoListRow {
+  height: 55px;
+  padding: 5px 20px;
+}
+
+/* ToDo */
+.ToDo {
+  width: 300px;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid var(--ToDo-border-color);
+
+  display: flex;
+}
+
+.ToDo:hover {
+  border: 1px solid var(--ToDo-border-hovered-color);
+}
+
+.Marker-container {
+  width: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ToDo-title {
+  flex: 1 1 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.ToDo-checked {
+  text-decoration: line-through;
+  color: var(--ToDo-checked-color);
+}
+
+.ToDo-delete {
+  width: 48px;
+  color: #d8d8d8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ToDo Delete button */
+.fa-trash-alt:hover {
+  color: #000;
+}
+
+.fa-trash-alt:active {
+  transform: scale(0.9);
+}
+
+/* Marker */
+.fa-circle { 
+  color: var(--marker-color);
+}
+
+/* Marked */
+.fa-check-circle {
+  color: var(--marker-checked-color);
+}
