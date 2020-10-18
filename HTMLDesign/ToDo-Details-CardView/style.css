@@ -1,0 +1,15 @@
+:root {
+  --label-font-size: 12px;
+}
+
+.ToDoDetails {
+  min-height: 360px;
+  min-width: 483px;
+}
+
+.label {
+  min-height: 20px;
+  background: yellow;
+  font-size: var(--label-font-size);
+  
+}
