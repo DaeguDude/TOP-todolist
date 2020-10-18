@@ -1,0 +1,54 @@
+:root {
+  --marker-checked-color: #d8d8d8;
+  --ToDo-checked-color: #d8d8d8;
+}
+
+.Todo {
+  width: 300px;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid black;
+
+  display: flex;
+}
+
+.Marker-container {
+  width: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ToDo-title {
+  flex: 1 1 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.ToDo-checked {
+  text-decoration: line-through;
+  color: var(--ToDo-checked-color);
+}
+
+.ToDo-delete {
+  width: 48px;
+  color: #d8d8d8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ToDo-delete:hover {
+  color: #0080ff;
+}
+
+.ToDo-delte:active {
+  transform: translateX(0.5);
+}
+
+.fa-check-circle {
+  color: var(--marker-checked-color);
+}

@@ -1,0 +1,23 @@
+.ToDoList-card-view {
+  width: 360px;
+  height: 483px;
+  background: lightcoral;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ToDoList-title {
+  height: 60px;
+  background: yellow;
+}
+
+.ToDoList-todo {
+  flex: 1 1 0;
+  background: lightgreen;
+}
+
+.ToDoListRow {
+  height: 55px;
+  background: lightslategray;
+}
