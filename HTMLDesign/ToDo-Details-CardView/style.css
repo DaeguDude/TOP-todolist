@@ -1,15 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --label-font-size: 12px;
+  --TaskDetails-header-color: #e7e7e7;
+  --title-font-size: 24px;
+  --bold-font-weight: 700;
+  --textarea-border-radius: 8px;
+  --marker-color: #d8d8d8;
+  --marker-checked-color: #d8d8d8;
+  --ToDo-checked-color: #d8d8d8;
+  --ToDo-border-hovered-color: #0080ff;
+  --MarkAsDoneBtn-font-color: #0080ff;
+  --ToDo-border-color: #e2e1e1;
+  --default-font-size: 16px;
+  --default-font-color: #000;
+  --TaskDetails-CardView-border-radius: 8px;
+}
+
+
+/* Utility */
+textarea {
+  resize: none;
+  border: none;
+  padding: none;
 }
 
 .ToDoDetails {
-  min-height: 360px;
-  min-width: 483px;
+  max-width: 360px;
+  max-height: 483px;
+
+  background: #fff;
+  border: 1px solid black;
+  border-radius: var(--TaskDetails-CardView-border-radius);
+  
+  padding: 20px;
+}
+
+.ToDoDetails textarea {
+  width: 100%;
 }
 
 .label {
-  min-height: 20px;
-  background: yellow;
+  min-height: 28px;
   font-size: var(--label-font-size);
   
+  display: flex;
+  align-items: center;
+}
+
+.ToDoDetails-Title {
+  min-height: 40px;
+  max-height: 40px;
+
+  font-size: var(--title-font-size);
+  font-weight: var(--bold-font-weight);
+
+  display: flex;
+  align-items: center;
+}
+
+.ToDoDetails-Title-Textarea {
+  max-height: 40px;
+  line-height: 40px;
+  border-radius: var(--textarea-border-radius);
+  font-size: var(--title-font-size);
+}
+
+.date {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.priorities {
+  width: 64px;
+  height: 28px;
+
+  display: flex;
+  
+}
+
+
+
+.priority {
+  margin-right: 5px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.priority span {
+  padding: 5px;
+}
+
+.priorities .important {
+  background: #ea3232
+}
+
+.priorities .high {
+  background: #fcba3a;
+}
+
+.priorities .middle {
+  background: #50b767;
+}
+
+.priorities .low {
+  background: #a6a6a6;
+}
+
+.ToDoDetails-Notes-Textarea {
+  max-height: 24px;
+  line-height: 16px;
+  border-radius: var(--textarea-border-radius);
+  font-size: var(--default-font-size);
+}
+
+.ToDoDetails textarea:hover,
+.ToDoDetails textarea:focus {
+  background: var(--TaskDetails-header-color);
+} 
+
+.buttons-container {
+  
+  height: 67px;
+  box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.8);
+  margin-top: 10px;
+  display: flex;
+}
+
+.buttons-container button {
+  flex: 1 0 0;
+}
+
+.ToDoDetails-DeleteTaskBtn {
+  font-size: var(--default-font-size);
+  color: var(--default-font-color);
+}
+
+.ToDoDetails-MarkAsDoneBtn {
+  font-size: var(--default-font-size);
+  color: var(--MarkAsDoneBtn-font-color);
+}
+
+
+
+
+/* --------------------------- */
+/* TODO */
+/* --------------------------- */
+
+
+.ToDo {
+  width: 300px;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid var(--ToDo-border-color);
+
+  display: flex;
+}
+
+.ToDo:hover {
+  border: 1px solid var(--ToDo-border-hovered-color);
+}
+
+.Marker-container {
+  width: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ToDo-title {
+  flex: 1 1 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.ToDo-checked {
+  text-decoration: line-through;
+  color: var(--ToDo-checked-color);
+}
+
+.ToDo-delete {
+  width: 48px;
+  color: #d8d8d8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ToDo Delete button */
+.fa-trash-alt:hover {
+  color: #000;
+}
+
+.fa-trash-alt:active {
+  transform: scale(0.9);
+}
+
+/* Marker */
+.fa-circle { 
+  color: var(--marker-color);
+}
+
+/* Marked */
+.fa-check-circle {
+  color: var(--marker-checked-color);
 }
