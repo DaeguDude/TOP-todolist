@@ -5,6 +5,7 @@ const Todo = (title, ...args) => {
   let _createdDate = args[2];
   let _priority = args[3];
   let _category = args[4];
+  let _completed = false;
 
   // ------------------------------------------
   // SET
@@ -60,13 +61,30 @@ const Todo = (title, ...args) => {
     return _category;
   }
 
+  // ------------------------------------------
+  // MISCELLANEOUS
+  // ------------------------------------------
+
+  const isCompleted = () => {
+    return _completed;
+  }
+
+  const markCompleted = () => {
+    _completed = true;
+  }
+
+  const undoCompleted = () => {
+    _completed = false;
+  } 
+
   
   return {
     // SET
     setTitle, setDescription, setDueDate,
     setCreatedDate, setPriority, setCategory,
     getTitle, getDescription, getDueDate,
-    getCreatedDate, getPriority, getCategory
+    getCreatedDate, getPriority, getCategory,
+    markCompleted, undoCompleted, isCompleted
   }
 }
 
