@@ -1,10 +1,10 @@
-const Todo = (title, ...args) => {
+const Todo = (title, description, category) => {
   let _title = title;
-  let _description = args[0];
-  let _dueDate = args[1];
-  let _createdDate = args[2];
-  let _priority = args[3];
-  let _category = args[4];
+  let _description = description;
+  let _category = category;
+  let _dueDate = '';
+  let _createdDate = '';
+  let _priority = '';
   let _completed = false;
 
   // ------------------------------------------
@@ -16,6 +16,10 @@ const Todo = (title, ...args) => {
 
   const setDescription = (description) => {
     _description = description
+  }
+  
+  const setCategory = (category) => {
+    _category = category;
   }
 
   const setDueDate = (dueDate) => {
@@ -30,9 +34,6 @@ const Todo = (title, ...args) => {
     _priority = priority;
   }
 
-  const setCategory = (category) => {
-    _category = category;
-  }
 
   // ------------------------------------------
   // GET
@@ -43,6 +44,10 @@ const Todo = (title, ...args) => {
 
   const getDescription = () => {
     return _description;
+  }
+  
+  const getCategory = () => {
+    return _category;
   }
 
   const getDueDate = () => {
@@ -57,17 +62,14 @@ const Todo = (title, ...args) => {
     return _priority;
   }
 
-  const getCategory = () => {
-    return _category;
+
+  const isCompleted = () => {
+    return _completed;
   }
 
   // ------------------------------------------
   // MISCELLANEOUS
   // ------------------------------------------
-
-  const isCompleted = () => {
-    return _completed;
-  }
 
   const markCompleted = () => {
     _completed = true;
@@ -79,12 +81,9 @@ const Todo = (title, ...args) => {
 
   
   return {
-    // SET
-    setTitle, setDescription, setDueDate,
-    setCreatedDate, setPriority, setCategory,
-    getTitle, getDescription, getDueDate,
-    getCreatedDate, getPriority, getCategory,
-    markCompleted, undoCompleted, isCompleted
+    setTitle, setDescription, setCategory, setDueDate, setCreatedDate, setPriority,
+    getTitle, getDescription, getCategory, getCreatedDate, getPriority, getDueDate,
+    isCompleted, markCompleted, undoCompleted
   }
 }
 
