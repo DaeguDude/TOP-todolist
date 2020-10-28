@@ -5,56 +5,157 @@ const TodoList = () => {
   };
 
   // Add Todo
-  const addTodo = (Todo, category) => {
-    // Add Todo to the specific category
+  const addTodo = (todo) => {
+    let category = todo.getCategory();
+    
+    // if category doesn't exist, add one
+    if (!(category in _todos)) {
+      addNewCategory(category);
+    } 
+    
+    _todos[category].push(todo);
   }
 
   const addNewCategory = (category) => {
-    // Add new category
+    _todos[category] = [];
   }
 
-  const deleteTodo = (Todo, category) => {
-    // Delete Todo
+  const deleteTodo = (todoToFind) => {
+    // Iterate every todos in _todos, if found, remove it.
+    for (const [category, todos] of Object.entries(_todos)) {
+      const todosLength = todos.length;
+      for (let i = 0; i < todos.length; i++) {
+        const currentTodo = todos[i];
+        const sameObjects = Object.is(todoToFind, currentTodo);
+        if (sameObjects) {
+          todos.splice(i, 1);;
+          return;
+        } 
+      }  
+    }
   }
 
   const deleteCategory = (category) => {
-    // Delete category
+    return delete _todos[category];
   }
 
-  const getTodos = () => {
-    // Get every todos
+  const getAllTodos = () => {
+    const allTodos = [];
+    for (const [category, todos] of Object.entries(_todos)) {
+      todos.forEach(todo => {
+        allTodos.push(todo);
+      })
+    }
+
+    return allTodos;
   }
 
-  const getTodosInTheCategory = (category) => {
-    // Get todos in the given category
+  const getTodos = (category) => {
+    return _todos[category];
   }
 
-  const getCategories = () => {
-    // Get every existing categories
+  const getAllCategories = () => {
+    const categories = Object.keys(_todos);
+    return categories;
   }
 
-  const orderTodosDueDate = (category) => {
-    // Get Todos in the given category
-    // order by due date
+  const sortTodosDueDate = (todos) => {
+    todos.sort((todoOne, todoTwo) => {
+      const todoOneDueDate = todoOne.getDueDate();
+      const todoTwoDueDate = todoTwo.getDueDate();
+      
+      return Number(todoOneDueDate) - Number(todoTwoDueDate);
+    });
   }
 
-  const orderTodosCreatedDate = (category) => {
-    // Get Todos in the given category
-    // order by created date
+  /**
+   * ------------------------------------------------------------------
+   * THIS NEEDS TO BE FIXED. 
+   * IT'S WORKING. BUT VERY INEFFICIENT CODE
+   * ------------------------------------------------------------------
+   */
+  const sortTodosPriority = (todos) => {
+    
+    const IMPORTANT = 1;
+    const HIGH = 2;
+    const MIDDLE = 3;
+    const LOW = 4;
+
+    todos.sort((todoOne, todoTwo) => {
+      let todoOnePriority = todoOne.getPriority();
+      let todoTwoPriority = todoTwo.getPriority();
+      
+      switch (todoOnePriority) {
+        case "important":
+          todoOnePriority = IMPORTANT;
+          break;
+        case "high":
+          todoOnePriority = HIGH;
+          break;
+        case "middle":
+          todoOnePriority = MIDDLE;
+          break;
+        case "low":
+          todoOnePriority = LOW;
+          break;
+      }
+
+      switch (todoTwoPriority) {
+        case "important":
+          todoTwoPriority = IMPORTANT;
+          break;
+        case "high":
+          todoTwoPriority = HIGH;
+          break;
+        case "middle":
+          todoTwoPriority = MIDDLE;
+          break;
+        case "low":
+          todoTwoPriority = LOW;
+          break;
+      }
+        
+      return todoOnePriority - todoTwoPriority;
+    });
   }
 
-  const orderTodosPriority = (category) => {
-    // Get Todos in the given category
-    // order by date
+  const sortTodosCreatedDate = (todos) => {
+    todos.sort((todoOne, todoTwo) => {
+      const todoOneCreatedDate = todoOne.getCreatedDate();
+      const todoTwoCreatedDate = todoTwo.getCreatedDate();
+      
+      return Number(todoOneCreatedDate) - Number(todoTwoCreatedDate);
+    });
   }
+
 
   return {
+    _todos,
     addTodo, addNewCategory, deleteTodo, deleteCategory,
-    getTodos, getTodosInTheCategory, getCategories,
-    orderTodosDueDate, orderTodosCreatedDate, orderTodosPriority
+    getTodos, getAllTodos, getAllCategories,
+    sortTodosDueDate, sortTodosCreatedDate, sortTodosPriority
   }
 }
 
+
+
+  // const addCategory = (category) => {
+  //   _todos[category] = [];
+  // }
+
+  // const getCategories = () => {
+  //   const categories = [];
+  //   for (const category in _todos) {
+  //     categories.push(category);
+  //   }
+
+  //   return categories;
+  // }
+  
+
+  // const addTodo = (todo, category) => {
+  //   _todos[category].push(todo);    
+  // }
 
 
   // const addCategory = (category) => {
