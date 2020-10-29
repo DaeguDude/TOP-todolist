@@ -62,15 +62,16 @@ const Todo = (title, description, category) => {
     return _priority;
   }
 
-
+  // ------------------------------------------
+  // is(boolean)
+  // ------------------------------------------
   const isCompleted = () => {
     return _completed;
   }
 
   // ------------------------------------------
-  // MISCELLANEOUS
+  // Completed
   // ------------------------------------------
-
   const markCompleted = () => {
     _completed = true;
   }
