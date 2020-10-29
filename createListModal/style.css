@@ -3,22 +3,35 @@
 }
 
 :root {
+  --action-color: #0080ff;
+  --color-text-1: #ffffff;
   --modal-border-radius: 8px;
   --font-weight-medium: 500;
   --label-font-size: 12px;
   --label-font-weight: var(--font-weight-medium);
   --label-font-color: #828292;
   --default-font-size: 16px;
+  --card-item-bg-color: #161616;
   --card-above-font-color: #d8d8d8;
   --card-above-bg-color: #252525;
   --card-above-bg-color-highlighted: #424242;
   --button-separation-border-color: #7f7f7f;
+
+  --textField-title-font-size: 28px;
+  --textField-border: 8px;
+  --textField-bg-focus-color: #000;
 }
 
 /* UTILITY TAGS */
 
 button {
   cursor: pointer;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
 }
 
 /* UTILITY CLASSES */
@@ -29,11 +42,29 @@ button {
   color: var(--label-font-color);
 }
 
+.textField {
+  background-color: transparent;
+  color: var(--color-text-1);
+  font-size: var(--textField-title-font-size);
+  border-radius: var(--textField-border);
+}
+
+.textField:focus,
+.textField:hover {
+  outline: none;
+  border-color: var(--textField-bg-focus-color);
+  background-color: var(--textField-bg-focus-color);
+  caret-color: var(--action-color);
+}
+
+/*  */
+
 .createList-modal {
   width: 400px;
   height: 165px;
   
   /* TO BE REMOVED */
+  background-color: var(--card-item-bg-color);
   border: 1px solid black;
   border-radius: var(--modal-border-radius);
 
@@ -53,13 +84,13 @@ button {
   height: 20px;
 }
 
+.createList-modal-textField-container {
+  
+}
+
 .createList-modal-button-container {
   display: flex;
   flex: 1 0 0 ;
-}
-
-.createList-modal-button-container div {
-  border: 0.1px solid white;
 }
 
 .createList-buttons {
@@ -70,7 +101,6 @@ button {
   color: var(--card-above-font-color);
   border: none;
   border-radius: 0;
-
 
   /* To center things */
   display: flex;
@@ -83,8 +113,6 @@ button {
   background-color: var(--card-above-bg-color-highlighted);
 }
 
-
-
 button[data-btn="cancel"] {
   border-radius: 0 0 0 var(--modal-border-radius);
   border-right: 0.5px solid var(--button-separation-border-color);
@@ -92,4 +120,5 @@ button[data-btn="cancel"] {
 
 button[data-btn="create"] {
   border-radius: 0 0 var(--modal-border-radius) 0; 
+  color: var(--action-color);
 }
