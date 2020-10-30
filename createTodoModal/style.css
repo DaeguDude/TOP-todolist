@@ -26,6 +26,8 @@
   --textField-description-font-size: 15px;
   --textField-border: 8px;
   --textField-bg-focus-color: #000;
+  /* createListModal */
+  --gutter: 16px;
 }
 
 /* UTILITY TAGS */
@@ -33,6 +35,7 @@
 button {
   cursor: pointer;
   outline: none;
+  border: none;
 }
 
 textarea {
@@ -72,68 +75,65 @@ textarea {
   font-size: var(--textField-description-font-size);
 }
 
-/*  */
-
-.createList-modal {
-  width: 400px;
-  height: 165px;
-  
-  /* TO BE REMOVED */
-  background-color: var(--card-item-bg-color);
+.craeteTodo-modal {
+  height: 450px;
+  width: 450px;
   border: 1px solid black;
   border-radius: var(--modal-border-radius);
+  background-color: var(--card-item-bg-color);
 
   display: flex;
   flex-direction: column;
 }
 
-.createList-modal-content-container {
-  height: 112px;
-  padding: 16px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.createList-modal-LabelText-container {
-  height: 20px;
-}
-
-.createList-modal-textField-container {
-  
-}
-
-.createList-modal-button-container {
-  display: flex;
-  flex: 1 0 0 ;
-}
-
-.createList-buttons {
+.craeteTodo-modal-todoinfo-container {
   flex: 1 0 0;
-  background-color: var(--card-above-bg-color);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--default-font-size);
-  color: var(--card-above-font-color);
-  border: none;
-  border-radius: 0;
+  padding: var(--gutter);
 
-  /* To center things */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.createList-buttons:hover, 
-.createList-buttons:focus {
-  background-color: var(--card-above-bg-color-highlighted);
+.todoinfo-container-title {
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
 }
 
-button[data-btn="cancel"] {
-  border-radius: 0 0 0 var(--modal-border-radius);
-  border-right: 0.5px solid var(--button-separation-border-color);
+.todoinfo-container-description {
+  flex: 4 0 0;
+
+  display: flex;
+  flex-direction: column;
 }
 
-button[data-btn="create"] {
-  border-radius: 0 0 var(--modal-border-radius) 0; 
+.todoinfo-container-category {
+  flex: 1 0 0;
+}
+
+.todoinfo-category-selectBtn {
+  background-color: inherit;
   color: var(--action-color);
+  padding: 0;
+}
+
+.createTodo-modal-addTodoBtn-container {
+  flex: 0 0 54px;
+
+  display: flex;
+}
+
+.createTodo-buttons {
+  flex: 1 0 0;
+
+  border-radius: 0 0 var(--modal-border-radius) var(--modal-border-radius); 
+  background-color: var(--card-above-bg-color);
+  /* color: var(--color-text-3); */
+  color: var(--action-color);
+}
+
+.createTodo-buttons:hover,
+.createTodo-buttons:active {
+  background-color: var(--card-above-bg-color-highlighted);
 }
