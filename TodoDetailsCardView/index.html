@@ -13,22 +13,46 @@
     <div class="TodoEdit-header">TODO DETAILS</div>
     <div class="TodoEdit-main">
       <!-- TITLE -->
-      <div class="TodoEdit-main-titleRow">
+      <div class="TodoEdit-main-titleRow TodoEdit-padder">
         <div class="Label__Text">TITLE</div>
         <textarea rows="1" class="textField TodoEdit-title-textfield"></textarea>
       </div>
 
       <!-- TAGS -->
-      <div class="TodoEdit-main-tagRow">
+      <div class="TodoEdit-main-tagRow TodoEdit-padder">
         <div class="Label__Text">TAGS</div>
-        
+        <div class="TodoEdit-Tags">
+          <button id="priority-important-btn" class="priority-tag priority-btns-not-selected">Important</button>
+          <button id="priority-high-btn" class="priority-tag priority-btns-not-selected">High</button>
+          <button id="priority-middle-btn" class="priority-tag priority-btns-not-selected">Middle</button>
+          <button id="priority-low-btn" class="priority-tag priority-btns-not-selected">Low</button>
+        </div>
       </div>
 
       <!-- DUEDATE -->
-      <div class="TodoEdit-main-tagRow">
-        <div class="Label__Text">TAGS</div>
-        
+      <div class="TodoEdit-main-DueDateRow TodoEdit-padder">
+        <div class="Label__Text">DUE DATE</div>
+        <div class="TodoEdit-DueDateBox">
+          <input type="date" id="TodoEdit-DueDate" name="DueDate" 
+          value="2020-11-03" min="2020-11-03">
+        </div>
       </div>
+      
+      <!-- Description -->
+      <div class="TodoEdit-main-DescriptionRow TodoEdit-padder">
+        <div class="Label__Text">DESCRIPTION</div>
+        <textarea rows="7" class="textField textField-description"></textarea>
+      </div>
+
+      <!-- CREATED DATE -->
+      <div class="TodoEdit-main-CreatedDateRow TodoEdit-padder">
+        <div class="Label__Text">CREATED DATE</div>
+        <div class="TodoEdit-CreatedDate">
+          2020.11.03
+        </div>
+      </div>
+
+      
     </div>
   </div>
  </div>
