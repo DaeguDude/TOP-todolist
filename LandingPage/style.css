@@ -231,3 +231,35 @@ a {
 .category-items:hover {
   background-color: var(--category-item-bg-highlighted-color);
 }
+
+/* MAIN START */
+
+.main {
+  flex: 1 0 0;
+  background: url('../src/img/background.jpg');
+  background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+
+  display: flex;
+  align-items: center;
+}
+
+.CardView-Container {
+  width: 80%;
+  height: 80%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.CardView-Container div {
+  width: 350px;
+  height: 450px;
+  background: white;
+}
+
+.CardView-Container div:nth-child(2) {
+  margin-left: 50px;
+}
+
