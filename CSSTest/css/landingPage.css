@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --action-color: #0080ff;
+  --action-button-text-color: #fff;
+  --color-text-1: #e4e4e4;
+  --color-text-2: #d8d8d8;
+  --color-text-3: #888888;
+  --modal-border-radius: 8px;
+  --todo-item-border-radius: var(--modal-border-radius);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --label-font-size: 12px;
+  --label-font-weight: var(--font-weight-medium);
+  --label-font-color: #828292;
+  --label-bottom-padding: 4px;
+  --default-font-size: 16px;
+  --extra-small-font-size: 10px;
+  --card-bg-1-color: #161616;
+  --card-item-bg-color: #161616;
+  --card-item-bg-highlighted-color: #252525;
+  --card-above-font-color: #d8d8d8;
+  --card-above-bg-color: #252525;
+  --card-above-bg-color-highlighted: #424242;
+  --button-separation-border-color: #7f7f7f;
+  --textField-title-font-size: 28px;
+  --textField-description-font-size: 15px;
+  --textField-border: 8px;
+  --textField-bg-focus-color: #000;
+  /* createTodoModal */
+  --gutter: 16px;
+
+  /* categorySelectionModal */
+  --border-bottom-color: #cccccc;
+  --card-item-font-color: #d8d8d8;
+  --card-item-font-size: 14px;
+  --confirm-color: #23ce88;
+
+  /* TodoList-CardView */
+  --todo-item-bg-color: #252525;
+  --todo-item-bg-highlighted-color: #424242;
+  --todo-item-text-checked-color: #8e8e92;
+  --todo-item-header-text-color: #e4e4e4;
+  --todo-item-header-font-size: 20px;
+  --card-bg-1-color: #161616;
+
+  /* TodoDetails-CardView */
+  --CardPadder-right: 24px;
+  --CardPadder-left: 24px;
+  --CardPadder-top: 8px;
+  --CardPadder-bottom: 8px;
+  --todo-edit-header-text-color: #e4e4e4;
+  --todo-edit-textfield-title-font-size: 24px;
+  --font-size-base: 15px;
+
+  /* Landing Page */
+  --navbar-category-text-color: #8e8e92;
+  --category-item-bg-highlighted-color: #252525;
+  --navbar-left-right-padding: 20px;
+}
+
+/* UTILITY TAGS */
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit; 
+  text-decoration: none;
+}
+
+/* UTILITY CLASSES */
+
+.Label__Text {
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-font-color);
+  padding-bottom: var(--label-bottom-padding);
+}
+
+.textField {
+  background-color: transparent;
+  width: 90%;
+  color: var(--color-text-1);
+  border-radius: var(--textField-border);
+}
+
+.textField:focus,
+.textField:hover {
+  outline: none;
+  border-color: var(--textField-bg-focus-color);
+  background-color: var(--textField-bg-focus-color);
+  caret-color: var(--action-color);
+}
+
+.textField-title {
+  font-size: var(--textField-title-font-size);
+}
+
+.textField-description {
+  font-size: var(--textField-description-font-size);
+}
+
+/* LANDING PAGE */
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.navbar {
+  
+  background-color: var(--card-bg-1-color);
+  width: 280px;
+  display: flex;
+  flex-direction: column;  
+}
+
+.navbar-header {
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--navbar-left-right-padding);
+  padding-bottom: 0;
+}
+
+.personal-detail-container {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-1);
+  height: 40px;
+}
+
+.personal-detail-name {
+  display: flex;
+  align-items: center;
+
+  font-size: var(--default-font-size);
+  font-weight: var(--font-weight-bold);
+}
+
+.personal-social-medias {
+  display: flex;
+}
+
+.social-media-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.social-media-icon:hover {
+  color: var(--action-color);
+}
+
+.createTodoBtn-container {
+  height: 96px;
+
+  display: flex;
+  align-items: center;
+}
+
+#createTodoBtn {
+  height: 40px;
+  width: 224px;
+  border-radius: 50px;
+  background-color: var(--action-color);
+  color: var(--action-button-text-color);
+  
+}
+
+#createTodoBtn:active {
+  transform: scale(0.95);
+}
+
+/* NAVBAR MAIN */
+.navbar-main {
+}
+.navbar-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-category-header {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-1);
+  font-weight: var(--font-weight-bold);
+  padding: 0 var(--navbar-left-right-padding);
+}
+
+.navbar-category-list {
+  color: var(--navbar-category-text-color);
+  /* Random Height */
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+
+.category-items {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  padding: 0 var(--navbar-left-right-padding);
+}
+
+.category-items:hover {
+  background-color: var(--category-item-bg-highlighted-color);
+}
+
+/* MAIN START */
+
+.main {
+  flex: 1 0 0;
+  background: url('../src/img/background.jpg');
+  background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+
+  display: flex;
+  align-items: center;
+}
+
+.CardView-Container {
+  width: 80%;
+  height: 80%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.CardView-Container div {
+  width: 350px;
+  height: 450px;
+  background: white;
+}
+
+.CardView-Container div:nth-child(2) {
+  margin-left: 50px;
+}
+

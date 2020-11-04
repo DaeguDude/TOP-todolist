@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --action-color: #0080ff;
+  --color-text-1: #ffffff;
+  --color-text-2: #d8d8d8;
+  --color-text-3: #888888;
+  --modal-border-radius: 8px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --label-font-size: 12px;
+  --label-font-weight: var(--font-weight-medium);
+  --label-font-color: #828292;
+  --label-bottom-padding: 4px;
+  --default-font-size: 16px;
+  --card-item-bg-color: #161616;
+  --card-above-font-color: #d8d8d8;
+  --card-above-bg-color: #252525;
+  --card-above-bg-color-highlighted: #424242;
+  --button-separation-border-color: #7f7f7f;
+  --textField-title-font-size: 28px;
+  --textField-description-font-size: 15px;
+  --textField-border: 8px;
+  --textField-bg-focus-color: #000;
+}
+
+/* UTILITY TAGS */
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+
+/* UTILITY CLASSES */
+
+.Label__Text {
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-font-color);
+  padding-bottom: var(--label-bottom-padding);
+}
+
+.textField {
+  background-color: transparent;
+  width: 90%;
+  color: var(--color-text-1);
+  border-radius: var(--textField-border);
+}
+
+.textField:focus,
+.textField:hover {
+  outline: none;
+  border-color: var(--textField-bg-focus-color);
+  background-color: var(--textField-bg-focus-color);
+  caret-color: var(--action-color);
+}
+
+.textField-title {
+  font-size: var(--textField-title-font-size);
+}
+
+.textField-description {
+  font-size: var(--textField-description-font-size);
+}
+
+/*  */
+
+.createList-modal {
+  width: 400px;
+  height: 165px;
+  
+  /* TO BE REMOVED */
+  background-color: var(--card-item-bg-color);
+  border: 1px solid black;
+  border-radius: var(--modal-border-radius);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.createList-modal-content-container {
+  height: 112px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.createList-modal-LabelText-container {
+  height: 20px;
+}
+
+.createList-modal-textField-container {
+  
+}
+
+.createList-modal-button-container {
+  display: flex;
+  flex: 1 0 0 ;
+}
+
+.createList-buttons {
+  flex: 1 0 0;
+  background-color: var(--card-above-bg-color);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--default-font-size);
+  color: var(--card-above-font-color);
+  border: none;
+  border-radius: 0;
+
+  /* To center things */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createList-buttons:hover, 
+.createList-buttons:focus {
+  background-color: var(--card-above-bg-color-highlighted);
+}
+
+button[data-btn="cancel"] {
+  border-radius: 0 0 0 var(--modal-border-radius);
+  border-right: 0.5px solid var(--button-separation-border-color);
+}
+
+button[data-btn="create"] {
+  border-radius: 0 0 var(--modal-border-radius) 0; 
+  color: var(--action-color);
+}

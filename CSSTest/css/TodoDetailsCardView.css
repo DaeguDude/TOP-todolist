@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --action-color: #0080ff;
+  --color-text-1: #e4e4e4;
+  --color-text-2: #d8d8d8;
+  --color-text-3: #888888;
+  --modal-border-radius: 8px;
+  --todo-item-border-radius: var(--modal-border-radius);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --label-font-size: 12px;
+  --label-font-weight: var(--font-weight-medium);
+  --label-font-color: #828292;
+  --label-bottom-padding: 4px;
+  --default-font-size: 16px;
+  --extra-small-font-size: 10px;
+  --card-item-bg-color: #161616;
+  --card-item-bg-highlighted-color: #252525;
+  --card-above-font-color: #d8d8d8;
+  --card-above-bg-color: #252525;
+  --card-above-bg-color-highlighted: #424242;
+  --button-separation-border-color: #7f7f7f;
+  --textField-title-font-size: 28px;
+  --textField-description-font-size: 15px;
+  --textField-border: 8px;
+  --textField-bg-focus-color: #000;
+  /* createTodoModal */
+  --gutter: 16px;
+
+  /* categorySelectionModal */
+  --border-bottom-color: #cccccc;
+  --card-item-font-color: #d8d8d8;
+  --card-item-font-size: 14px;
+  --confirm-color: #23ce88;
+
+  /* TodoList-CardView */
+  --todo-item-bg-color: #252525;
+  --todo-item-bg-highlighted-color: #424242;
+  --todo-item-text-checked-color: #8e8e92;
+  --todo-item-header-text-color: #e4e4e4;
+  --todo-item-header-font-size: 20px;
+  --card-bg-1-color: #161616;
+
+  /* TodoDetails-CardView */
+  --CardPadder-right: 24px;
+  --CardPadder-left: 24px;
+  --CardPadder-top: 8px;
+  --CardPadder-bottom: 8px;
+  --todo-edit-header-text-color: #e4e4e4;
+  --todo-edit-textfield-title-font-size: 24px;
+  --font-size-base: 15px;
+}
+
+/* UTILITY TAGS */
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+
+/* UTILITY CLASSES */
+
+.Label__Text {
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-font-color);
+  padding-bottom: var(--label-bottom-padding);
+}
+
+.textField {
+  background-color: transparent;
+  width: 90%;
+  color: var(--color-text-1);
+  border-radius: var(--textField-border);
+}
+
+.textField:focus,
+.textField:hover {
+  outline: none;
+  border-color: var(--textField-bg-focus-color);
+  background-color: var(--textField-bg-focus-color);
+  caret-color: var(--action-color);
+}
+
+.textField-title {
+  font-size: var(--textField-title-font-size);
+}
+
+.textField-description {
+  font-size: var(--textField-description-font-size);
+}
+
+/* TodoDetails-CardView */
+
+.TodoDetails-CardView {
+  width: 350px;
+  height: 450px;
+  min-width: 350px;
+  min-height: 450px;
+  color: var(--color-text-1);
+  background-color: var(--card-bg-1-color);
+  border-radius: var(--modal-border-radius);
+
+  border: 1px solid black;
+}
+
+.TodoEdit-Pane {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoEdit-header {
+  min-height: 54px;
+  
+  background-color: var(--card-above-bg-color);
+
+  display: flex;
+  align-items: center;
+  padding-left: var(--CardPadder-left);
+  padding-right: var(--CardPadder-right);
+  font-size: var(--label-font-size);
+  color: var(--todo-edit-header-text-color);
+}
+
+.TodoEdit-main {
+  flex: 1 0 0;
+  /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+
+  padding-top: var(--CardPadder-top);
+  padding-bottom: var(--CardPadder-bottom);
+  padding-right: var(--CardPadder-right);
+  padding-left: var(--CardPadder-left);
+}
+
+.TodoEdit-padder {
+  padding-top: var(--CardPadder-top);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoEdit-main-titleRow {
+
+}
+
+.TodoEdit-Tags {
+  display: flex;
+}
+
+.priority-tag {
+  border-radius: 12px;
+  height: 20px;
+  width: 60px;
+  margin-right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: var(--extra-small-font-size);
+}
+
+.priority-tag:active {
+  transform: scale(0.95)
+}
+
+/* #priority-important-btn {
+  background-color: #EA3232;
+}
+
+#priority-high-btn {
+  background-color: #FCBA3A;
+}
+
+#priority-middle-btn {
+  background-color: #50b767;
+}
+
+#priority-low-btn {
+  background-color: #a6a6a6;
+} */
+
+.priority-btns-not-selected {
+  background-color: #4b4b4b;
+}
+
+.TodoEdit-title-textfield {
+  font-size: var(--todo-edit-textfield-title-font-size);
+}
+
+.TodoEdit-main-tagRow {
+  padding-top: var(--CardPadder-top);
+}
+
+.TodoEdit-CreatedDate {
+  font-size: var(--font-size-base);
+}
+
