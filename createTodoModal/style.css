@@ -75,7 +75,7 @@ textarea {
   font-size: var(--textField-description-font-size);
 }
 
-.craeteTodo-modal {
+.createTodo-modal {
   height: 450px;
   width: 450px;
   border: 1px solid black;
@@ -86,7 +86,7 @@ textarea {
   flex-direction: column;
 }
 
-.craeteTodo-modal-todoinfo-container {
+.createTodo-modal-todoinfo-container {
   flex: 1 0 0;
   padding: var(--gutter);
 

@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './CSSTest/index.js',
@@ -9,18 +10,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
       },
     ],
   },
-  resolve: {
-    alias: {
-      './CSSTest/background.jpg': path.resolve(
-        __dirname,
-        './CSSTest/background.jpg'
-      ),
-    },
-  },
-};
 
+};

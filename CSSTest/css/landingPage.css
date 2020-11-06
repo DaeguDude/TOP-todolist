@@ -236,7 +236,7 @@ a {
 
 .main {
   flex: 1 0 0;
-  background: url('../src/img/background.jpg');
+  background: url('../background.jpg');
   background-size: 100% 100%;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
