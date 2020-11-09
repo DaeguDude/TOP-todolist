@@ -1,3 +1,5 @@
+import '../../css/categorySelectionModal.css';
+
 const createCategorySelectionModalItems = (title) => {
   const categorySelectionModalItems = document.createElement('button');
   categorySelectionModalItems.classList.add('categorySelection-modal-items');
@@ -12,16 +14,20 @@ const createCategorySelectionModalItems = (title) => {
   return categorySelectionModalItems;
 }
 
-const getCheckMarker = () => {
+const loadCheckMarker = () => {
   const checkMarker = document.createElement('i');
   checkMarker.classList.add('far', 'fa-check-circle');
 
   return checkMarker;
 }
 
-const getCategorySelectionModal = () => {
+const loadCategorySelectionModal = () => {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
   const categorySelectionModal = document.createElement('div');
   categorySelectionModal.classList.add('categorySelection-modal');
+  categorySelectionModal.classList.add('modal-content');
 
   const categorySelectionModalHeader = document.createElement('div');
   categorySelectionModalHeader.classList.add('categorySelection-modal-header');
@@ -51,9 +57,13 @@ const getCategorySelectionModal = () => {
   categorySelectionModalMain.appendChild(school);
   categorySelectionModalMain.appendChild(life);
   categorySelectionModalMain.appendChild(jiujitsu);
+
+  modal.appendChild(categorySelectionModal);
   
-  return categorySelectionModal;
+  return modal;
 }
+
+export { loadCategorySelectionModal };
 
 // const body = document.querySelector('body');
 // const categorySelectionModal = getCategorySelectionModal();

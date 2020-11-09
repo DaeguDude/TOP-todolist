@@ -1,4 +1,6 @@
-const createTodoItem = (title) => {
+import '../../css/todoListCardView.css';
+
+const loadTodoItem = (title) => {
   // We need to insert the row, todoitem is in the row
   const todoListMainRows = document.createElement('div');
   todoListMainRows.classList.add('TodoList-main-rows')
@@ -29,6 +31,8 @@ const createTodoItem = (title) => {
 
   return todoListMainRows;
 }
+
+export { loadTodoItem };
 
 // const cardViewMain = document.querySelector('.TodoList-CardView-main');
 // cardViewMain.appendChild(createTodoItem('workout'));

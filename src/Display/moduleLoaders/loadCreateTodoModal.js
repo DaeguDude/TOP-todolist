@@ -1,4 +1,6 @@
-const getTodoinfoContainerTitle = () => {
+import '../../css/createTodoModal.css';
+
+const loadTodoinfoContainerTitle = () => {
   const todoinfoContainerTitle = document.createElement('div');
   todoinfoContainerTitle.classList.add('todoinfo-container-title');
 
@@ -21,7 +23,7 @@ const getTodoinfoContainerTitle = () => {
   return todoinfoContainerTitle;
 }
 
-const getTodoinfoContainerDescription = () => {
+const loadTodoinfoContainerDescription = () => {
   const todoinfoContainerDescription = document.createElement('div');
   todoinfoContainerDescription.classList.add('todoinfo-container-description');
 
@@ -44,7 +46,7 @@ const getTodoinfoContainerDescription = () => {
   return todoinfoContainerDescription;
 }
 
-const getTodoinfoContainerCategory = () => {
+const loadTodoinfoContainerCategory = () => {
   const todoinfoContainerCategory = document.createElement('div');
   todoinfoContainerCategory.classList.add('todoinfo-container-category');
 
@@ -67,13 +69,13 @@ const getTodoinfoContainerCategory = () => {
   return todoinfoContainerCategory;
 }
 
-const getTodoInfoContainer = () => {
+const loadTodoInfoContainer = () => {
   const todoInfoContainer = document.createElement('div');
   todoInfoContainer.classList.add('createTodo-modal-todoinfo-container');
 
-  const todoinfoContainerTitle = getTodoinfoContainerTitle();
-  const todoinfoContainerDescription = getTodoinfoContainerDescription();
-  const todoinfoContainerCategory = getTodoinfoContainerCategory();
+  const todoinfoContainerTitle = loadTodoinfoContainerTitle();
+  const todoinfoContainerDescription = loadTodoinfoContainerDescription();
+  const todoinfoContainerCategory = loadTodoinfoContainerCategory();
 
   todoInfoContainer.appendChild(todoinfoContainerTitle);
   todoInfoContainer.appendChild(todoinfoContainerDescription);
@@ -82,7 +84,7 @@ const getTodoInfoContainer = () => {
   return todoInfoContainer;
 }
 
-const getAddTodoBtnContainer = () => {
+const loadAddTodoBtnContainer = () => {
   const addTodoBtnContainer = document.createElement('div');
   addTodoBtnContainer.classList.add('createTodo-modal-addTodoBtn-container');
 
@@ -96,18 +98,25 @@ const getAddTodoBtnContainer = () => {
 }
 
 // Return createTodoModal Contents
-const getCreateTodoModal = () => {
+const loadCreateTodoModal = () => {
+  const modal = document.createElement('div')
+  modal.classList.add('modal');
+
   const createTodoModal = document.createElement('div');
   createTodoModal.classList.add('createTodo-modal');
+  createTodoModal.classList.add('modal-content');
 
-  const todoInfoContainer = getTodoInfoContainer();
-  const addTodoBtnContainer = getAddTodoBtnContainer();
+  const todoInfoContainer = loadTodoInfoContainer();
+  const addTodoBtnContainer = loadAddTodoBtnContainer();
   
   createTodoModal.appendChild(todoInfoContainer);
   createTodoModal.appendChild(addTodoBtnContainer);
 
-  return createTodoModal;
+  modal.appendChild(createTodoModal);
+
+  return modal;
 }
 
-const body = document.querySelector('body');
-body.appendChild(getCreateTodoModal());
+export { loadCreateTodoModal };
+
+

@@ -1,5 +1,7 @@
+import '../../css/todoDetailsCardView.css';
+
 // Universal Functions
-const getLabelText = (label) => {
+const loadLabelText = (label) => {
   const labelText = document.createElement('div');
   labelText.classList.add('Label__Text');
   labelText.innerText = label;
@@ -12,7 +14,7 @@ const capitalizeFirstLetter = (str) => {
   return capitalized;
 }
 
-const getPriorityBtn = (importance) => {
+const loadPriorityBtn = (importance) => {
   const priorityBtn = document.createElement('button');
   const id = `priority-${importance}-btn`;
   priorityBtn.setAttribute('id', id);
@@ -24,11 +26,11 @@ const getPriorityBtn = (importance) => {
   return priorityBtn;
 }
 
-const getTitleRow = () => {
+const loadTitleRow = () => {
   const titleRow = document.createElement('div');
   titleRow.classList.add('TodoEdit-main-titleRow', 'TodoEdit-padder');
   
-  const labelText = getLabelText('TITLE');
+  const labelText = loadLabelText('TITLE');
   
   const titleTextArea = document.createElement('textarea');
   titleTextArea.classList.add('textField', 'TodoEdit-title-textfield');
@@ -41,30 +43,30 @@ const getTitleRow = () => {
   return titleRow;
 }
 
-const getTagRow = () => {
+const loadTagRow = () => {
   const tagRow = document.createElement('div');
   tagRow.classList.add('TodoEdit-main-tagRow', 'TodoEdit-padder');
 
-  const labelText = getLabelText('TAGS');
+  const labelText = loadLabelText('TAGS');
   const tags = document.createElement('div');
   tags.classList.add('TodoEdit-Tags');
   
   tagRow.appendChild(labelText);
   tagRow.appendChild(tags);
 
-  tags.appendChild(getPriorityBtn('important'));
-  tags.appendChild(getPriorityBtn('high'));
-  tags.appendChild(getPriorityBtn('middle'));
-  tags.appendChild(getPriorityBtn('low'));
+  tags.appendChild(loadPriorityBtn('important'));
+  tags.appendChild(loadPriorityBtn('high'));
+  tags.appendChild(loadPriorityBtn('middle'));
+  tags.appendChild(loadPriorityBtn('low'));
 
   return tagRow;
 }
 
-const getDueDateRow = () => {
+const loadDueDateRow = () => {
   const dueDateRow = document.createElement('div');
   dueDateRow.classList.add('TodoEdit-main-DueDateRow', 'TodoEdit-padder');
 
-  const labelText = getLabelText('DUE DATE');
+  const labelText = loadLabelText('DUE DATE');
 
   const dueDateInputBox = document.createElement('div');
   dueDateInputBox.classList.add('TodoEdit-DueDateBox');
@@ -86,11 +88,11 @@ const getDueDateRow = () => {
   return dueDateRow;
 }
 
-const getDescriptionRow = () => {
+const loadDescriptionRow = () => {
   const descriptionRow = document.createElement('div');
   descriptionRow.classList.add('TodoEdit-main-DescriptionRow', 'TodoEdit-padder');
 
-  const labelText = getLabelText('DESCRIPTION');
+  const labelText = loadLabelText('DESCRIPTION');
 
   const descriptionTextArea = document.createElement('textarea');
   descriptionTextArea.classList.add('textField', 'textField-description');
@@ -102,13 +104,13 @@ const getDescriptionRow = () => {
   return descriptionRow;
 }
 
-const getCreatedDateRow = (date) => {
+const loadCreatedDateRow = (date) => {
   // Maybe I can import some library to get today's date
 
   const createdDateRow = document.createElement('div');
   createdDateRow.classList.add('TodoEdit-main-CreatedDateRow', 'TodoEdit-padder');
 
-  const labelText = getLabelText('CREATED DATE');
+  const labelText = loadLabelText('CREATED DATE');
 
   const createdDate = document.createElement('div');
   createdDate.classList.add('TodoEdit-CreatedDate');
@@ -121,7 +123,7 @@ const getCreatedDateRow = (date) => {
   return createdDateRow;
 }
 
-const getTodoEditHeader = () => {
+const loadTodoEditHeader = () => {
   const todoEditHeader = document.createElement('div');
   todoEditHeader.classList.add('TodoEdit-header');
   todoEditHeader.innerText = "TODO DETAILS";
@@ -129,44 +131,41 @@ const getTodoEditHeader = () => {
   return todoEditHeader;
 }
 
-const getTodoEditMain = () => {
+const loadTodoEditMain = () => {
   const todoEditMain = document.createElement('div');
   todoEditMain.classList.add('TodoEdit-main');
 
-  todoEditMain.appendChild(getTitleRow());
-  todoEditMain.appendChild(getTagRow());
-  todoEditMain.appendChild(getDueDateRow());
-  todoEditMain.appendChild(getDescriptionRow());
-  todoEditMain.appendChild(getCreatedDateRow());
+  todoEditMain.appendChild(loadTitleRow());
+  todoEditMain.appendChild(loadTagRow());
+  todoEditMain.appendChild(loadDueDateRow());
+  todoEditMain.appendChild(loadDescriptionRow());
+  todoEditMain.appendChild(loadCreatedDateRow());
 
   return todoEditMain;
 }
 
-const getTodoEditPane = () => {
+const loadTodoEditPane = () => {
   const todoEditPane = document.createElement('div');
   todoEditPane.classList.add('TodoEdit-Pane');
 
-  todoEditPane.appendChild(getTodoEditHeader());
-  todoEditPane.appendChild(getTodoEditMain());
+  todoEditPane.appendChild(loadTodoEditHeader());
+  todoEditPane.appendChild(loadTodoEditMain());
 
   return todoEditPane;
 }
 
 // Should export only one big function
-const getTodoDetailsCardView = () => {
+const loadTodoDetailsCardView = () => {
   const todoDetailsCardView = document.createElement('div');
   todoDetailsCardView.classList.add('TodoDetails-CardView');
 
-  const todoEditPane = getTodoEditPane();
+  const todoEditPane = loadTodoEditPane();
   todoDetailsCardView.appendChild(todoEditPane);
 
   return todoDetailsCardView;
 }
 
-const body = document.querySelector('body');
-body.appendChild(getTodoDetailsCardView());
-
-
+export { loadTodoDetailsCardView };
 
 
 

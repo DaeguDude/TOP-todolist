@@ -1,3 +1,5 @@
+import '../../css/createListModal.css';
+
 const getCreateListModal = () => {
   const createListModal = document.createElement('div');
   createListModal.classList.add('createList-modal');
@@ -51,6 +53,8 @@ const getCreateListModal = () => {
 
   return createListModal;
 }
+
+export { getCreateListModal };
 
 // const body = document.querySelector('body');
 // const createListModal = getCreateListModal();
