@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+
+:root {
+  --action-color: #0080ff;
+  --color-text-1: #ffffff;
+  --color-text-2: #d8d8d8;
+  --color-text-3: #888888;
+  --modal-border-radius: 8px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --label-font-size: 12px;
+  --label-font-weight: var(--font-weight-medium);
+  --label-font-color: #828292;
+  --label-bottom-padding: 4px;
+  --default-font-size: 16px;
+  --card-item-bg-color: #161616;
+  --card-above-font-color: #d8d8d8;
+  --card-above-bg-color: #252525;
+  --card-above-bg-color-highlighted: #424242;
+  --button-separation-border-color: #7f7f7f;
+  --textField-title-font-size: 28px;
+  --textField-description-font-size: 15px;
+  --textField-border: 8px;
+  --textField-bg-focus-color: #000;
+  /* createListModal */
+  --gutter: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  position: absolute;
+  z-index: 1; /* Sit on top */
+
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* UTILITY TAGS */
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+
+/* UTILITY CLASSES */
+
+.Label__Text {
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-font-color);
+  padding-bottom: var(--label-bottom-padding);
+}
+
+.textField {
+  background-color: transparent;
+  width: 90%;
+  color: var(--color-text-1);
+  border-radius: var(--textField-border);
+}
+
+.textField:focus,
+.textField:hover {
+  outline: none;
+  border-color: var(--textField-bg-focus-color);
+  background-color: var(--textField-bg-focus-color);
+  caret-color: var(--action-color);
+}
+
+.textField-title {
+  font-size: var(--textField-title-font-size);
+}
+
+.textField-description {
+  font-size: var(--textField-description-font-size);
+}
+
+.createTodo-modal {
+  height: 450px;
+  width: 450px;
+  border: 1px solid black;
+  border-radius: var(--modal-border-radius);
+  background-color: var(--card-item-bg-color);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.createTodo-modal-todoinfo-container {
+  flex: 1 0 0;
+  padding: var(--gutter);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-title {
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-description {
+  flex: 4 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-category {
+  flex: 1 0 0;
+}
+
+.todoinfo-category-selectBtn {
+  background-color: inherit;
+  color: var(--action-color);
+  padding: 0;
+}
+
+.createTodo-modal-addTodoBtn-container {
+  flex: 0 0 54px;
+
+  display: flex;
+}
+
+.createTodo-buttons {
+  flex: 1 0 0;
+
+  border-radius: 0 0 var(--modal-border-radius) var(--modal-border-radius); 
+  background-color: var(--card-above-bg-color);
+  /* color: var(--color-text-3); */
+  color: var(--action-color);
+}
+
+.createTodo-buttons:hover,
+.createTodo-buttons:active {
+  background-color: var(--card-above-bg-color-highlighted);
+}

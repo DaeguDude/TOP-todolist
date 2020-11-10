@@ -210,6 +210,11 @@ a {
   padding: 0 var(--navbar-left-right-padding);
 }
 
+.navbar-category-header span {
+  margin-right: 10px;
+}
+
+
 .navbar-category-list {
   color: var(--navbar-category-text-color);
   /* Random Height */
@@ -236,7 +241,7 @@ a {
 
 .main {
   flex: 1 0 0;
-  background: url('../background.jpg');
+  /* background: url('../src/img/background.jpg'); */
   background-size: 100% 100%;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
@@ -253,13 +258,9 @@ a {
   align-items: center;
 }
 
-.CardView-Container div {
-  width: 350px;
-  height: 450px;
-  background: white;
-}
+.CardView-Container .TodoDetails-CardView {
+  margin-left: 20px;
+} 
 
-.CardView-Container div:nth-child(2) {
-  margin-left: 50px;
-}
+
 

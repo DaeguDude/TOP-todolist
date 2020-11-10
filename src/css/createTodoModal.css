@@ -18,7 +18,6 @@
   --label-bottom-padding: 4px;
   --default-font-size: 16px;
   --card-item-bg-color: #161616;
-  --card-item-bg-highlighted-color: #252525;
   --card-above-font-color: #d8d8d8;
   --card-above-bg-color: #252525;
   --card-above-bg-color-highlighted: #424242;
@@ -27,14 +26,8 @@
   --textField-description-font-size: 15px;
   --textField-border: 8px;
   --textField-bg-focus-color: #000;
-  /* createTodoModal */
+  /* createListModal */
   --gutter: 16px;
-
-  /* categorySelectionModal */
-  --border-bottom-color: #cccccc;
-  --card-item-font-color: #d8d8d8;
-  --card-item-font-size: 14px;
-  --confirm-color: #23ce88;
 }
 
 /* UTILITY TAGS */
@@ -51,6 +44,27 @@ textarea {
 }
 
 /* UTILITY CLASSES */
+
+/* The Modal (background) */
+.modal {
+  position: absolute;
+  z-index: 1; /* Sit on top */
+
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .Label__Text {
   font-size: var(--label-font-size);
@@ -82,79 +96,65 @@ textarea {
   font-size: var(--textField-description-font-size);
 }
 
-/* categorySelectionModal */
-
-.categorySelection-modal {
-  height: 300px;
-  height: 300px;
-
-  max-width: 300px;
-  max-height: 350px;
+.createTodo-modal {
+  height: 450px;
+  width: 450px;
   border: 1px solid black;
   border-radius: var(--modal-border-radius);
+  background-color: var(--card-item-bg-color);
 
   display: flex;
   flex-direction: column;
 }
 
-.categorySelection-modal-header {
-  height: 55px;
-  min-height: 55px;
-  /* Give padding to the just side */
-  padding: 0 var(--gutter);
+.createTodo-modal-todoinfo-container {
+  flex: 1 0 0;
+  padding: var(--gutter);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-title {
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-description {
+  flex: 4 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoinfo-container-category {
+  flex: 1 0 0;
+}
+
+.todoinfo-category-selectBtn {
+  background-color: inherit;
+  color: var(--action-color);
+  padding: 0;
+}
+
+.createTodo-modal-addTodoBtn-container {
+  flex: 0 0 54px;
+
+  display: flex;
+}
+
+.createTodo-buttons {
+  flex: 1 0 0;
+
+  border-radius: 0 0 var(--modal-border-radius) var(--modal-border-radius); 
   background-color: var(--card-above-bg-color);
-  border-radius: var(--modal-border-radius) var(--modal-border-radius) 0 0;
-  color: var(--card-above-font-color);
-
-  display: flex;
-  align-items: center;
+  /* color: var(--color-text-3); */
+  color: var(--action-color);
 }
 
-.categorySelection-modal-title {
-  font-weight: var(--font-weight-semi-bold);
+.createTodo-buttons:hover,
+.createTodo-buttons:active {
+  background-color: var(--card-above-bg-color-highlighted);
 }
-
-.categorySelection-modal-main {
-  flex: 1 0 0;
-  background-color: var(--card-item-bg-color);
-  border-radius: 0 0 var(--modal-border-radius) var(--modal-border-radius);
-
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-}
-
-.categorySelection-modal-items {
-  min-height: 44px;
-  padding: 0 var(--gutter);
-  background-color: var(--card-item-bg-color);
-
-  display: flex;
-  align-items: stretch;
-}
-
-.categorySelection-modal-items:hover,
-.categorySelection-modal-items:active {
-  background-color: var(--card-item-bg-highlighted-color);
-}
-
-.categorySelection-modal-items-title {
-  flex: 1 0 0;
-  color: var(--card-item-font-color);
-  font-size: var(--card-item-font-size);
-  border-bottom: 1px solid var(--border-bottom-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.categorySelection-modal .fa-check-circle {
-  border: none;
-  outline: none;
-  border-radius: var(--modal-border-radius);
-  background-color: var(--confirm-color); 
-  font-size: 1.3em;
-}
-
-
-

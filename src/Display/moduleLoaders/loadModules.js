@@ -3,6 +3,7 @@ export { loadCategorySelectionModal } from './loadCategorySelectionModal.js';
 export { loadCreateListModal } from './loadCreateListModal.js';
 export { loadCreateTodoModal } from './loadCreateTodoModal.js';
 export { loadTodoDetailsCardView } from './loadTodoDetailsCardView.js';
+export { loadCategories } from './loadCategories.js';
 
 
 

@@ -4,27 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/fadac8530c.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="TodoList-CardView">
-    <div class="TodoList-CardView-header">
-      The Odin Project
-    </div>
-    <div class="TodoList-CardView-main">
-      <div class="TodoList-main-rows">
-        <div class="TodoItem TodoItem-checked">
-          <div class="TodoItem-checkBox">
-            <!-- <i class="far fa-circle"></i> -->
-            <i class="fas fa-check-circle"></i>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-header">
+        <div class="personal-detail-container">
+          <div class="personal-detail-name">DaeguDude</div>
+          <div class="personal-social-medias">
+            <a href="https://github.com/daegudude">
+              <i class="social-media-icon fab fa-github-square"></i>
+            </a>
+            <a href="https://twitter.com/Daegudude_Kim">
+              <i class="social-media-icon fab fa-twitter-square"></i>
+            </a>
+            <a href="mailto:k3hppk@gmail.com">
+              <i class="social-media-icon fas fa-envelope-square"></i>
+            </a>
           </div>
-          <div class="TodoItem-title TodoItem-title-checked">asdfdsfasdfdsfa</div>
-          <i class="fas fa-backspace TodoItem-delete-btn"></i>
+        </div>
+
+        <div class="createTodoBtn-container">
+          <button id="createTodoBtn">+   Create a todo</button>
         </div>
       </div>
-      <!-- ERASE -->
+      <div class="navbar-main">
+        <div class="navbar-category">
+          <div class="navbar-category-header">
+            <span>Category</span>
+            <button id="unfold-category-btn"><i class="fas fa-chevron-down"></i></button>
+          </div>
+          <ul class="navbar-category-list">
+            <li class="category-items">The Odin Project</li>
+            <li class="category-items">Gym</li>
+            <li class="category-items">Workout</li>
+            <li class="category-items">Plan</li>
+            <li class="category-items">School</li>
 
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="CardView-Container">
+        <div class="TodoList-CardView">
+          <div class="TodoList-CardView-header">
+            The Odin Project
+          </div>
+          <div class="TodoList-CardView-main">
+
+          </div>
+        </div>
+        <div> </div>
+        
+      </div>
     </div>
   </div>
+
+
   <script src="main.js"></script>
 </body>
 </html>

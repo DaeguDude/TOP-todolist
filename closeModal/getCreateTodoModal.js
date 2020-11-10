@@ -1,8 +1,3 @@
-const modal = () => {
-  const modal = document.createElement('div')
-  modal.classList.add('modal');
-}
-
 const getTodoinfoContainerTitle = () => {
   const todoinfoContainerTitle = document.createElement('div');
   todoinfoContainerTitle.classList.add('todoinfo-container-title');
@@ -102,8 +97,12 @@ const getAddTodoBtnContainer = () => {
 
 // Return createTodoModal Contents
 const getCreateTodoModal = () => {
+  const modal = document.createElement('div')
+  modal.classList.add('modal');
+
   const createTodoModal = document.createElement('div');
   createTodoModal.classList.add('createTodo-modal');
+  createTodoModal.classList.add('modal-content');
 
   const todoInfoContainer = getTodoInfoContainer();
   const addTodoBtnContainer = getAddTodoBtnContainer();
@@ -111,8 +110,11 @@ const getCreateTodoModal = () => {
   createTodoModal.appendChild(todoInfoContainer);
   createTodoModal.appendChild(addTodoBtnContainer);
 
-  return createTodoModal;
+  modal.appendChild(createTodoModal);
+
+  return modal;
 }
 
-const body = document.querySelector('body');
-body.appendChild(getCreateTodoModal());
+export { getCreateTodoModal };
+
+
