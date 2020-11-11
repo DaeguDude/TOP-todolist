@@ -9,13 +9,14 @@ import {
 
 
 
+
 import { TodoList } from '../TodoList/TodoList.js';
+import { Todo } from '../Todo/Todo.js';
 
 const todoList = TodoList();
 
-
-
 const Display = () => {
+  
   const getTodoInfoCategorySelectBtn = () => {
     return document.querySelector('.todoinfo-category-selectBtn');
   }
@@ -27,24 +28,10 @@ const Display = () => {
     
     return false;
   }
-  const getTodoTitle = () => {
-    const titleTextarea = document.querySelector('.todoinfo-title textarea');
-    return titleTextarea.value;
-  }
 
   const getNavBarCategory = () => {
     const navBarCategory = document.querySelector('.navbar-category');
     return navBarCategory;
-  }
-
-  const getTodoDescription = () => {
-    const descriptionTextarea = document.querySelector('.todoinfo-description textarea');
-    return descriptionTextarea.value;
-  }
-
-  const getTodoCategory = () => {
-    const categorySelectBtn = document.querySelector('.todoinfo-category-selectBtn');
-    return categorySelectBtn.textContent;
   }
 
   const getTodoListCardViewMain = () => {
@@ -92,11 +79,12 @@ const Display = () => {
       attachModalCloser(createTodoModal);
       const addTodoBtn = getAddTodoBtn();
       addTodoBtn.addEventListener('click', () => {
-        const title = getTodoTitle();
-        if (!isEmpty(title)) {
-          console.log(`ADD ${title} to the display`);
-          console.log(`Add ${title} to the todolist`)
-          closeModal(createTodoModal.parentNode);
+        const title = getTitle();
+        const titleLength = title.length;
+        if (titleLength != 0) {
+          let todo = getTodoBasicDetail();
+          todo = Todo(todo['title'], todo['description'], todo['category']);
+          todoList.addTodo(todo);          
         }
       })
 
@@ -105,9 +93,12 @@ const Display = () => {
     }
 
     if ( targetId.includes('category-select') || targetClass.includes('category-select') ) {
-      container.appendChild(loadCategorySelectionModal());
+      // To be done as dynamically
+      const categories = ['The Odin Project', 'Gym', 'School', 'Life', 'Family'];
+      container.appendChild(loadCategorySelectionModal(categories));
       const categorySelectionModal = getCategorySelectionModal();
       attachModalCloser(categorySelectionModal);
+      
     }
 
     if ( targetId.includes('createList') || targetClass.includes('createList') ) {
@@ -155,21 +146,52 @@ const Display = () => {
     cardViewContainer.appendChild(loadTodoDetailsCardView());
   }
 
+  const getTitle = () => {
+    const titleTextarea = document.querySelector('.todoinfo-title textarea');
+    return titleTextarea.value;
+  }
+
+  const getDescription = () => {
+    const descriptionTextarea = document.querySelector('.todoinfo-description textarea');
+    return descriptionTextarea.value;
+  }
+
+  const getCategory = () => {
+    const categoryBtn = document.querySelector('.todoinfo-category button');
+    return categoryBtn.textContent;
+  }
+
+  const getTodoBasicDetail = () => {
+    const title = getTitle();
+    const description =  getDescription();
+    const category = getCategory();
+    
+    return { title, description, category };
+  }
+
+  const createTodo = () => {
+
+  }
+
   return {
     getContainer,
     getCreateTodoBtn,
     getTodoInfoCategorySelectBtn,
     getCategorySelectionModal,
     getCreateTodoModal,
+    getAddTodoBtn,
     openModal,
     closeModal,
     attachModalCloser,
     startListeningClickEvent,
     startUnfoldCategoryBtn,
     addTodo,
-    showTodoDetailsCardView
+    showTodoDetailsCardView,
+    getTodoBasicDetail
   }
 }
+
+
 
 
 

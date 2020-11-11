@@ -1,5 +1,15 @@
 import '../../css/categorySelectionModal.css';
 
+const getCheckMarker = () => {
+  const checkMarker = document.querySelector('.fa-check-circle');
+  return checkMarker;
+}
+
+const removeCheckMarker = () => {
+  const checkMarker = getCheckMarker();
+  checkMarker.remove();
+}
+
 const createCategorySelectionModalItems = (title) => {
   const categorySelectionModalItems = document.createElement('button');
   categorySelectionModalItems.classList.add('categorySelection-modal-items');
@@ -9,7 +19,6 @@ const createCategorySelectionModalItems = (title) => {
   categorySelectionModalItemsTitle.innerText = title;
 
   categorySelectionModalItems.appendChild(categorySelectionModalItemsTitle);
-
 
   return categorySelectionModalItems;
 }
@@ -21,7 +30,7 @@ const loadCheckMarker = () => {
   return checkMarker;
 }
 
-const loadCategorySelectionModal = () => {
+const loadCategorySelectionModal = (categories) => {
   const modal = document.createElement('div');
   modal.classList.add('modal');
 
@@ -43,20 +52,26 @@ const loadCategorySelectionModal = () => {
   categorySelectionModalHeader.appendChild(categorySelectionModalTitle);
 
   categorySelectionModal.appendChild(categorySelectionModalMain);
+ 
+  categories.forEach(category => {
+    const categoryItem = createCategorySelectionModalItems(category);
+
+
+    categorySelectionModalMain.appendChild(categoryItem);
+  });
+  // const top = createCategorySelectionModalItems('The Odin Project');
+  // const gym = createCategorySelectionModalItems('gym');
+  // const work = createCategorySelectionModalItems('work');
+  // const school = createCategorySelectionModalItems('school');
+  // const life = createCategorySelectionModalItems('life');
+  // const jiujitsu = createCategorySelectionModalItems('jiujitsu');
   
-  const top = createCategorySelectionModalItems('The Odin Project');
-  const gym = createCategorySelectionModalItems('gym');
-  const work = createCategorySelectionModalItems('work');
-  const school = createCategorySelectionModalItems('school');
-  const life = createCategorySelectionModalItems('life');
-  const jiujitsu = createCategorySelectionModalItems('jiujitsu');
-  
-  categorySelectionModalMain.appendChild(top);
-  categorySelectionModalMain.appendChild(gym);
-  categorySelectionModalMain.appendChild(work);
-  categorySelectionModalMain.appendChild(school);
-  categorySelectionModalMain.appendChild(life);
-  categorySelectionModalMain.appendChild(jiujitsu);
+  // categorySelectionModalMain.appendChild(top);
+  // categorySelectionModalMain.appendChild(gym);
+  // categorySelectionModalMain.appendChild(work);
+  // categorySelectionModalMain.appendChild(school);
+  // categorySelectionModalMain.appendChild(life);
+  // categorySelectionModalMain.appendChild(jiujitsu);
 
   modal.appendChild(categorySelectionModal);
   
