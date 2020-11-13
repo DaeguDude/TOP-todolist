@@ -5,8 +5,10 @@ import { Display } from './Display/display.js'
 import { loadCategories } from './Display/moduleLoaders/loadCategories.js';
 import { storageAvailable } from './localStorage/storageAvailable';
 
+
 const display = Display();
 const todoList = TodoList();
+
 
 todoList.addNewCategory('The Odin Project');
 todoList.addNewCategory('Work');
@@ -22,7 +24,7 @@ display.activateCreateTodoBtn();
 
 
 
-display.startUnfoldCategoryBtn();
+// display.startUnfoldCategoryBtn();
 
 display.addTodo('The Odin Project');
 display.addTodo('TodoList');
