@@ -16,8 +16,8 @@ todoList.addNewCategory('Gym');
 
 console.log(todoList.getAllCategories());
 
-const createTodoBtn = display.getCreateTodoBtn();
-display.startListeningClickEvent(createTodoBtn);
+
+display.activateCreateTodoBtn();
 
 
 

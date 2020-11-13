@@ -108,13 +108,12 @@ const Display = () => {
   }
 
   const closeModal = (modal) => {
-    modal.remove();
+    modal.parentNode.remove();
   }
 
-  const attachModalCloser = (modalContent) => {
+  const attachModalCloser = (modal) => {
     window.addEventListener('click', function closeThisModal(e) {
-      const modal = modalContent.parentNode;
-      if (e.target === modal) {
+      if (e.target === modal.parentNode) {
         closeModal(modal);
         window.removeEventListener('click', closeThisModal);
       }
@@ -169,8 +168,137 @@ const Display = () => {
     return { title, description, category };
   }
 
+  
+
+  const openCreateTodoModal = () => {
+    const container = getContainer();
+    const createTodoModalContent = loadCreateTodoModal();
+    container.appendChild(createTodoModalContent);
+    
+
+    
+    
+    // const createTodoModal = getCreateTodoModal();
+    // attachModalCloser(createTodoModal);
+    // const addTodoBtn = getAddTodoBtn();
+    // addTodoBtn.addEventListener('click', () => {
+    //   const title = getTitle();
+    //   const titleLength = title.length;
+    //   if (titleLength != 0) {
+    //     let todo = getTodoBasicDetail();
+    //     todo = Todo(todo['title'], todo['description'], todo['category']);
+    //     todoList.addTodo(todo);          
+    //   }
+    // })
+
+    // const categorySelectBtn = getTodoInfoCategorySelectBtn();
+    // startListeningClickEvent(categorySelectBtn)
+  
+  }
+
+  const getCheckMarker = () => {
+    const checkMarker = document.querySelector('.fa-check-circle');
+    return checkMarker;
+  }
+  
+  const removeCheckMarker = () => {
+    const checkMarker = getCheckMarker();
+    checkMarker.remove();
+  }
+  
+  const loadCheckMarker = () => {
+    const checkMarker = document.createElement('i');
+    checkMarker.classList.add('far', 'fa-check-circle');
+  
+    return checkMarker;
+  }
+
+  const changeCategoryInCreateTodoModal = (category) => {
+    const categorySelectBtn = getTodoInfoCategorySelectBtn();
+    categorySelectBtn.innerText = category;
+  }
+
+
+
+  const placeMarker = (elem) => {
+    const marker = loadCheckMarker();
+    const categoryTitle = elem.childNodes[0];
+    const hasMarker = !(categoryTitle.children.length === 0);
+    if (!hasMarker) {
+      const category = categoryTitle.textContent;
+      
+      removeCheckMarker();
+      categoryTitle.appendChild(marker);
+      changeCategoryInCreateTodoModal(category);
+    } 
+  }
+
+  const getCategorySelectionModalItemsTitle = () => {
+    return document.querySelectorAll('.categorySelection-modal-items-title');
+  }
+
+  const openCategorySelectionModal = (categories) => {
+    const container = getContainer();
+    const categorySelectionModalContent = loadCategorySelectionModal(categories);
+    container.appendChild(categorySelectionModalContent);
+
+    const categorySelectBtn = getTodoInfoCategorySelectBtn();
+    const selectedCategory = categorySelectBtn.textContent;
+
+    const itemsTitle = getCategorySelectionModalItemsTitle();
+    itemsTitle.forEach(item => {
+      const categoryTitle = item.textContent;
+      if (categoryTitle === selectedCategory) {
+        item.appendChild(loadCheckMarker());
+      }   
+    })
+  }
+
   const createTodo = () => {
 
+  }
+
+  const activateAddTodoBtn = () => {
+    const addTodoBtn = getAddTodoBtn();
+    addTodoBtn.addEventListener('click', (event) => {
+      const title = getTitle();
+      if (title.length > 0) {
+        const description = getDescription();
+        const category = getCategory();
+        // ALL WORKING. But I do need to add it to the 'todolist'
+        closeModal(getCreateTodoModal());
+      }
+    });
+  }
+
+  const activateCreateTodoBtn = () => {
+    const createTodoBtn = getCreateTodoBtn();
+    createTodoBtn.addEventListener('click', (event) => {
+      openCreateTodoModal();
+      attachModalCloser(getCreateTodoModal());
+      activateCategorySelectBtn();
+      activateAddTodoBtn();
+      
+    })
+  }
+
+  const activateSelectingCategory = () => {
+    const categories = document.querySelectorAll('.categorySelection-modal-items');
+    categories.forEach(category => {
+      category.addEventListener('click', () => {
+        placeMarker(category);
+        closeModal(getCategorySelectionModal());
+      });
+    })
+  }
+
+  const activateCategorySelectBtn = () => {
+    const categorySelectBtn = getTodoInfoCategorySelectBtn();
+    categorySelectBtn.addEventListener('click', (event) => {
+      openCategorySelectionModal(['The Odin Project', 'Gym', 'School']);
+      activateSelectingCategory();
+      attachModalCloser(getCategorySelectionModal());
+    })
   }
 
   return {
@@ -187,7 +315,8 @@ const Display = () => {
     startUnfoldCategoryBtn,
     addTodo,
     showTodoDetailsCardView,
-    getTodoBasicDetail
+    getTodoBasicDetail,
+    activateCreateTodoBtn
   }
 }
 
