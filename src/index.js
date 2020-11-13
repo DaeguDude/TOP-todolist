@@ -20,6 +20,7 @@ console.log(todoList.getAllCategories());
 
 
 display.activateCreateTodoBtn();
+display.activateUnfoldCategoryBtn();
 
 
 

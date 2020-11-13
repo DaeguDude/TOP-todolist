@@ -204,6 +204,7 @@ a {
 .navbar-category-header {
   height: 44px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   color: var(--color-text-1);
   font-weight: var(--font-weight-bold);
@@ -235,6 +236,20 @@ a {
 
 .category-items:hover {
   background-color: var(--category-item-bg-highlighted-color);
+}
+
+#fold-category-btn {
+  display: none;
+}
+
+#add-category-btn {
+  display: none;
+  background: none;
+  color: var(--color-text-1);
+}
+
+#add-category-btn:active {
+  transform: scale(0.95);
 }
 
 /* MAIN START */

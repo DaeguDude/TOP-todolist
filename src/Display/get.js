@@ -70,9 +70,26 @@ const Get = () => {
     return document.querySelectorAll('.categorySelection-modal-items-title');
   }
 
+  const getUnfoldCategoryBtn = () => {
+    return document.querySelector('#unfold-category-btn');
+  }
+
+  const getFoldCategoryBtn = () => {
+    return document.querySelector('#fold-category-btn');
+  }
+
+  const getNavBarCategoryHeader = () => {
+    return document.querySelector('.navbar-category-header');
+  }
+
+  const getAddCategoryBtn = () => {
+    return document.querySelector('#add-category-btn');
+  }
+
   const publicAPI = {
     getTodoInfoCategorySelectBtn,
     getNavBarCategory,
+    getNavBarCategoryHeader,
     getTodoListCardViewMain,
     getCardViewContainer,
     getAddTodoBtn,
@@ -85,7 +102,10 @@ const Get = () => {
     getCategory,
     getTodoBasicDetail,
     getCheckMarker,
-    getCategorySelectionModalItemsTitle
+    getCategorySelectionModalItemsTitle,
+    getUnfoldCategoryBtn,
+    getFoldCategoryBtn,
+    getAddCategoryBtn
   }
 
   return {

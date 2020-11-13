@@ -15,6 +15,8 @@ const todoList = TodoList();
 const get = Get().publicAPI;
 
 const Display = () => {
+
+  
   
   const isEmpty = (str) => {
     if (str.length === 0) {
@@ -23,10 +25,6 @@ const Display = () => {
     
     return false;
   }
-
-
-  
-  
 
   const closeModal = (modal) => {
     modal.parentNode.remove();
@@ -86,12 +84,11 @@ const Display = () => {
     return checkMarker;
   }
 
+
   const changeCategoryInCreateTodoModal = (category) => {
     const categorySelectBtn = get.getTodoInfoCategorySelectBtn();
     categorySelectBtn.innerText = category;
   }
-
-
 
   const placeMarker = (elem) => {
     const marker = loadCheckMarker();
@@ -170,14 +167,44 @@ const Display = () => {
     })
   }
 
+  const activateUnfoldCategoryBtn = () => {
+    const unfoldCategoryBtn = get.getUnfoldCategoryBtn();
+    unfoldCategoryBtn.addEventListener('click', () => {
+      // Read from todolist what categories exist
+      // Make each cataegory item and append it to the display
+      const categoryListUl = loadCategories(['The Odin Project', 'Gym', 'Workout', 'Life']);
+      const navBarCategory = get.getNavBarCategory();
+      navBarCategory.appendChild(categoryListUl);
+      // Change 'v' to '^'
+      showFoldBtn();
+      showAddCategoryBtn();
+
+      // Add '+' createList button
+    })
+  }
+
+  const showFoldBtn = () => {    
+    const unfoldBtn = get.getUnfoldCategoryBtn();
+    unfoldBtn.style.display = "none";
+    const foldBtn = get.getFoldCategoryBtn();
+    foldBtn.style.display = "inline-block";
+  }
+
+  const showAddCategoryBtn = () => {
+    const addCategoryBtn = get.getAddCategoryBtn();
+    addCategoryBtn.style.display = "inline-block";
+  }
+
+  
+
   return {
     closeModal,
     attachModalCloser,
     startListeningClickEvent,
-    // startUnfoldCategoryBtn,
     addTodo,
     showTodoDetailsCardView,
-    activateCreateTodoBtn
+    activateCreateTodoBtn,
+    activateUnfoldCategoryBtn
   }
 }
 

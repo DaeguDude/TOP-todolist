@@ -1,15 +1,4 @@
 import '../../css/categorySelectionModal.css';
-
-const getCheckMarker = () => {
-  const checkMarker = document.querySelector('.fa-check-circle');
-  return checkMarker;
-}
-
-const removeCheckMarker = () => {
-  const checkMarker = getCheckMarker();
-  checkMarker.remove();
-}
-
 const createCategorySelectionModalItems = (title) => {
   const categorySelectionModalItems = document.createElement('button');
   categorySelectionModalItems.classList.add('categorySelection-modal-items');
@@ -21,13 +10,6 @@ const createCategorySelectionModalItems = (title) => {
   categorySelectionModalItems.appendChild(categorySelectionModalItemsTitle);
 
   return categorySelectionModalItems;
-}
-
-const loadCheckMarker = () => {
-  const checkMarker = document.createElement('i');
-  checkMarker.classList.add('far', 'fa-check-circle');
-
-  return checkMarker;
 }
 
 const loadCategorySelectionModal = (categories) => {
