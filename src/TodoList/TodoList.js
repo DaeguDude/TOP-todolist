@@ -8,10 +8,10 @@ const TodoList = () => {
   const addTodo = (todo) => {
     let category = todo.getCategory();
     
-    // if category doesn't exist, add one
-    if (!(category in _todos)) {
-      addNewCategory(category);
-    } 
+    // // if category doesn't exist, add one
+    // if (!(category in _todos)) {
+    //   addNewCategory(category);
+    // } 
     
     _todos[category].push(todo);
   }

@@ -38,6 +38,10 @@ const Get = () => {
     return document.querySelector('.createTodo-modal');
   }
 
+  const getCreateListModal = () => {
+    return document.querySelector('.createList-modal');
+  }
+
   const getTitle = () => {
     const titleTextarea = document.querySelector('.todoinfo-title textarea');
     return titleTextarea.value;
@@ -86,17 +90,40 @@ const Get = () => {
     return document.querySelector('#add-category-btn');
   }
 
+  const getNavBarCategoryList = () => {
+    return document.querySelector('.navbar-category-list');
+  }
+
+  const getCreateListCreateBtn = () => {
+    return document.querySelectorAll('.createList-buttons')[1];
+  }
+
+  const getCreateListCancelBtn = () => {
+    return document.querySelectorAll('.createList-buttons')[0];
+  }
+
+  const getCreateListTitle = () => {
+    return document.querySelector('.textField-title').value;
+  }
+
+  
+
   const publicAPI = {
+    getCreateListTitle,
     getTodoInfoCategorySelectBtn,
     getNavBarCategory,
     getNavBarCategoryHeader,
+    getNavBarCategoryList,
     getTodoListCardViewMain,
+    getCreateListCancelBtn,
+    getCreateListCreateBtn,
     getCardViewContainer,
     getAddTodoBtn,
     getContainer,
     getCreateTodoBtn,
     getCategorySelectionModal,
     getCreateTodoModal,
+    getCreateListModal,
     getTitle,
     getDescription,
     getCategory,

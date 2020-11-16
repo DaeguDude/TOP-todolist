@@ -10,22 +10,20 @@ const display = Display();
 const todoList = TodoList();
 
 
-todoList.addNewCategory('The Odin Project');
-todoList.addNewCategory('Work');
-todoList.addNewCategory('Life');
-todoList.addNewCategory('School');
-todoList.addNewCategory('Gym');
+// todoList.addNewCategory('The Odin Project');
+// todoList.addNewCategory('Work');
+// todoList.addNewCategory('Life');
+// todoList.addNewCategory('School');
+// todoList.addNewCategory('Gym');
 
-console.log(todoList.getAllCategories());
+// console.log(todoList.getAllCategories());
 
 
 display.activateCreateTodoBtn();
 display.activateUnfoldCategoryBtn();
+display.activateAddCategoryBtn();
+display.showTodoDetailsCardView();
 
-
-
-
-// display.startUnfoldCategoryBtn();
 
 display.addTodo('The Odin Project');
 display.addTodo('TodoList');
@@ -33,7 +31,6 @@ display.addTodo('isHard....');
 display.addTodo('But consistency over efficiency');
 display.addTodo('Makes all difference so I shall proceed');
 
-display.showTodoDetailsCardView();
 
 
 

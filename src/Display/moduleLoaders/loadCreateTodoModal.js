@@ -46,7 +46,7 @@ const loadTodoinfoContainerDescription = () => {
   return todoinfoContainerDescription;
 }
 
-const loadTodoinfoContainerCategory = () => {
+const loadTodoinfoContainerCategory = (category) => {
   const todoinfoContainerCategory = document.createElement('div');
   todoinfoContainerCategory.classList.add('todoinfo-container-category');
 
@@ -60,7 +60,7 @@ const loadTodoinfoContainerCategory = () => {
   const categorySelectionBtn = document.createElement('button');
   categorySelectionBtn.classList.add('todoinfo-category-selectBtn');
   // This needs to be changed sometimes
-  categorySelectionBtn.innerText = "The Odin Project"
+  categorySelectionBtn.innerText = category;
 
   todoinfoContainerCategory.appendChild(labelText);
   todoinfoContainerCategory.appendChild(todoinfoCategory);
@@ -69,13 +69,13 @@ const loadTodoinfoContainerCategory = () => {
   return todoinfoContainerCategory;
 }
 
-const loadTodoInfoContainer = () => {
+const loadTodoInfoContainer = (category) => {
   const todoInfoContainer = document.createElement('div');
   todoInfoContainer.classList.add('createTodo-modal-todoinfo-container');
 
   const todoinfoContainerTitle = loadTodoinfoContainerTitle();
   const todoinfoContainerDescription = loadTodoinfoContainerDescription();
-  const todoinfoContainerCategory = loadTodoinfoContainerCategory();
+  const todoinfoContainerCategory = loadTodoinfoContainerCategory(category);
 
   todoInfoContainer.appendChild(todoinfoContainerTitle);
   todoInfoContainer.appendChild(todoinfoContainerDescription);
@@ -98,7 +98,7 @@ const loadAddTodoBtnContainer = () => {
 }
 
 // Return createTodoModal Contents
-const loadCreateTodoModal = () => {
+const loadCreateTodoModal = (category) => {
   const modal = document.createElement('div')
   modal.classList.add('modal');
 
@@ -106,7 +106,7 @@ const loadCreateTodoModal = () => {
   createTodoModal.classList.add('createTodo-modal');
   createTodoModal.classList.add('modal-content');
 
-  const todoInfoContainer = loadTodoInfoContainer();
+  const todoInfoContainer = loadTodoInfoContainer(category);
   const addTodoBtnContainer = loadAddTodoBtnContainer();
   
   createTodoModal.appendChild(todoInfoContainer);

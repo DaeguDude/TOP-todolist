@@ -1,8 +1,12 @@
 import '../../css/createListModal.css';
 
 const loadCreateListModal = () => {
+  const modal = document.createElement('div')
+  modal.classList.add('modal');
+
   const createListModal = document.createElement('div');
   createListModal.classList.add('createList-modal');
+  createListModal.classList.add('modal-content');
 
   // createList-modal-content-container
   const createListModalContentContainer = document.createElement('div');
@@ -37,6 +41,8 @@ const loadCreateListModal = () => {
   create.innerText = 'Create';
 
   // Structuring
+  modal.appendChild(createListModal);
+
   createListModal.appendChild(createListModalContentContainer);
   createListModal.appendChild(createListModalButtonContainer);
 
@@ -51,7 +57,7 @@ const loadCreateListModal = () => {
   createListModalButtonContainer.appendChild(cancel);
   createListModalButtonContainer.appendChild(create);
 
-  return createListModal;
+  return modal;
 }
 
 export { loadCreateListModal };
