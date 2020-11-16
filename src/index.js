@@ -25,11 +25,6 @@ display.activateAddCategoryBtn();
 display.showTodoDetailsCardView();
 
 
-display.addTodo('The Odin Project');
-display.addTodo('TodoList');
-display.addTodo('isHard....');
-display.addTodo('But consistency over efficiency');
-display.addTodo('Makes all difference so I shall proceed');
 
 
 

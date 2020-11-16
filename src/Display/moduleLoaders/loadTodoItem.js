@@ -34,14 +34,6 @@ const loadTodoItem = (title) => {
 
 export { loadTodoItem };
 
-// const cardViewMain = document.querySelector('.TodoList-CardView-main');
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
-// cardViewMain.appendChild(createTodoItem('workout'));
 
 
 

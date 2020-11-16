@@ -228,6 +228,7 @@ a {
 
 .category-items {
   min-height: 44px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
@@ -236,6 +237,7 @@ a {
 
 .category-items:hover {
   background-color: var(--category-item-bg-highlighted-color);
+  
 }
 
 #fold-category-btn {

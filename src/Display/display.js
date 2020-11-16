@@ -82,6 +82,20 @@ const Display = () => {
     return checkMarker;
   }
 
+  const loadUncompleteMarker = () => {
+    const UncompleteMarker = document.createElement('i');
+    UncompleteMarker.classList.add('fas', 'fa-check-circle');
+
+    return UncompleteMarker;
+  }
+
+  const loadCompleteMarker = () => {
+    const completeMarker = document.createElement('i');
+    completeMarker.classList.add('far', 'fa-circle');
+
+    return completeMarker;
+  }
+
 
   const changeCategoryInCreateTodoModal = (category) => {
     const categorySelectBtn = get.getTodoInfoCategorySelectBtn();
@@ -129,11 +143,13 @@ const Display = () => {
       if (title.length > 0) {
         const description = get.getDescription();
         const category = get.getCategory();
+        console.log(category);
         // ALL WORKING. But I do need to add it to the 'todolist'
         todoList.addTodo(Todo(title, description, category));
 
 
         closeModal(get.getCreateTodoModal());
+        loadTodoListCardView(category);
       }
     });
   }
@@ -182,6 +198,7 @@ const Display = () => {
       showFoldBtn();
       showAddCategoryBtn();
       activateFoldCategoryBtn();
+      activateCategoryListItems();
 
       // Add '+' createList button
     })
@@ -225,9 +242,50 @@ const Display = () => {
         const categoryListUl = loadCategories(todoList.getAllCategories());
         const navBarCategory = get.getNavBarCategory();
         navBarCategory.appendChild(categoryListUl);
+        activateCategoryListItems();
         
         closeModal(get.getCreateListModal());
       }
+    })
+  }
+
+  const activateCategoryListItems = () => {
+    const categoryLis = get.getCategoryItems();
+    categoryLis.forEach(li => {
+      li.addEventListener('click', () => {
+        // If clicked, 
+        const category = li.innerText;
+        loadTodoListCardView(category);
+      })
+    })
+  }
+
+  const changeTodoListCardViewTitle = (title) => {
+    const todoListHeader = get.getTodoListCardViewHeader();
+    todoListHeader.innerText = title;
+  }
+
+  const loadTodoListCardView = (category) => {
+    // Get header and change the name.
+    changeTodoListCardViewTitle(category);
+    // Remove Todo List
+    removeTodoList();
+    loadTodos(category);
+  }
+
+  const loadTodos = (category) => {
+    const todos = todoList.getTodos(category);
+    todos.forEach(todo => {
+      const todoTitle = todo.getTitle();
+      addTodo(todoTitle);
+    })
+    
+  }
+
+  const removeTodoList = () => {
+    const todos = get.getTodoListMainRows()
+    todos.forEach(todo => {
+      todo.remove();
     })
   }
 
@@ -258,6 +316,13 @@ const Display = () => {
   const removeCategoryList = () => {
     const categoryList = get.getNavBarCategoryList();
     categoryList.remove();
+  }
+
+  const changeToUncompleteMarker = () => {
+    const checkCompleteMarker = get.getCheckCompleteBtn();
+    checkCompleteMarker.remove();
+    const uncompleteMarker = loadUncompleteMarker();
+
   }
 
   

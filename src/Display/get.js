@@ -13,6 +13,11 @@ const Get = () => {
     return todoListCardViewMain;
   }
 
+  const getTodoListCardViewHeader = () => {
+    const todoListCardViewHeader = document.querySelector('.TodoList-CardView-header');
+    return todoListCardViewHeader;
+  }
+
   const getCardViewContainer = () => {
     const cardViewContainer = document.querySelector('.CardView-Container');
     return cardViewContainer;
@@ -106,15 +111,39 @@ const Get = () => {
     return document.querySelector('.textField-title').value;
   }
 
+  const getCategoryItems = () => {
+    return document.querySelectorAll('.category-items');
+  }
+
+  const getTodoListMainRows = () => {
+    return document.querySelectorAll('.TodoList-main-rows');
+  }
+
+  const getCheckCompleteMarker = () => {
+    return document.querySelector('.TodoItem-checkBox').children[0];
+  }
+
+  const getTodoListMainRowsOfCheckMarker = (marker) => {
+    const todoItemCheckBox = marker.parentNode;
+    const todoItem = todoItemCheckBox.parentNode;
+    const todoListMainRows = todoItem.parentNode;
+
+    return todoListMainRows;
+  }
+
   
 
   const publicAPI = {
+    getCheckCompleteMarker,
+    getTodoListMainRows,
+    getCategoryItems,
     getCreateListTitle,
     getTodoInfoCategorySelectBtn,
     getNavBarCategory,
     getNavBarCategoryHeader,
     getNavBarCategoryList,
     getTodoListCardViewMain,
+    getTodoListCardViewHeader,
     getCreateListCancelBtn,
     getCreateListCreateBtn,
     getCardViewContainer,
