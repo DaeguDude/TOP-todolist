@@ -131,9 +131,34 @@ const Get = () => {
     return todoListMainRows;
   }
 
+  const getTodoNumValue = (marker) => {
+    const todoMainRow = getTodoListMainRowsOfCheckMarker(marker);
+    return todoMainRow.getAttribute('data-todo');
+  }
+
+
+
+  const getTodoItemCompleteMarkers = () => {
+    return document.querySelectorAll('.TodoItem-checkBox .fa-circle')
+  }
+
+  const getOneTodoListMainRow = (index) => {
+    return document.querySelector(`div[data-todo='${index}'`);
+  }
+
+  const getCurrentTodoListCategory = () => {
+    return getTodoListCardViewHeader().innerText;
+  }
+
+
+
   
 
   const publicAPI = {
+    getCurrentTodoListCategory,
+    getOneTodoListMainRow,
+    getTodoNumValue,
+    getTodoItemCompleteMarkers,
     getCheckCompleteMarker,
     getTodoListMainRows,
     getCategoryItems,

@@ -7,24 +7,24 @@ import {
   loadCategories
 } from './moduleLoaders/loadModules.js';
 
+import { Icon } from './icon.js';
+
 import { Get } from './get.js';
 import { TodoList } from '../TodoList/TodoList.js';
 import { Todo } from '../Todo/Todo.js';
 
+// // FUNCTIONALITIES
+// import { markCompleted } from './functionalities/markComplete';
+
+const icon = Icon();
 const todoList = TodoList();
 const get = Get().publicAPI;
 
 
 
-const Display = () => {
 
-  const isEmpty = (str) => {
-    if (str.length === 0) {
-      return true;
-    }
-    
-    return false;
-  }
+
+const Display = () => {
 
   const closeModal = (modal) => {
     modal.parentNode.remove();
@@ -39,21 +39,64 @@ const Display = () => {
     })
   }
 
-  const startListeningClickEvent = (elem) => {
-    elem.addEventListener('click', openModal);
+  const activateMarker = (marker) => {
+    const markerId = marker.getAttribute('id');
+    marker.addEventListener('click', () => {
+      if (markerId === 'notCompletedMarker') {
+        const todoNumValue = get.getTodoNumValue(marker);
+        const todoMainrow = get.getOneTodoListMainRow(todoNumValue);
+        markCompleted(todoMainrow, todoList);
+      } else {
+        // Set Todo in Display Not completed
+        console.log('what');
+        // Set Todo in todolist Not completed
+      }
+    })
   }
 
-  const addTodo = (title) => {
+
+  const markCompleted = (todoMainRow) => {
+    // TODOLIST
+    const category = get.getCurrentTodoListCategory();
+    const todoNumValue = todoMainRow.getAttribute('data-todo');
+    const todo = todoList.getTodos(category)[todoNumValue];
+    todo.markCompleted();
+
+    // DISPLAY
+    const todoItem = todoMainRow.children[0];
+    todoItem.classList.add('TodoItem-checked');
+    const marker = todoItem.children[0].children[0];
+    marker.setAttribute('class', 'fas fa-check-circle');
+    marker.setAttribute('id', 'completedMarker');
+    const todoItemTitle = todoItem.children[1];
+    todoItemTitle.classList.add('TodoItem-title-checked');
+    
+    const deleteBtn = icon.loadTodoItemDeleteBtn();
+    
+    todoItem.appendChild(deleteBtn);
+
+
+  }
+
+  const markUncompleted = (todoMainRow) => {
+
+  }
+
+  const addTodo = (todo, index) => {
+    const title = todo.getTitle();
+    const completed = todo.isCompleted();
     const todoListCardViewMain = get.getTodoListCardViewMain();
-    todoListCardViewMain.appendChild(loadTodoItem(title));
+    const todoItem = loadTodoItem(title, index, completed);
+    const marker = todoItem.children[0].children[0].children[0];
+    activateMarker(marker);
+    
+    todoListCardViewMain.appendChild(todoItem);
   }
 
   const showTodoDetailsCardView = () => {
     const cardViewContainer = get.getCardViewContainer();
     cardViewContainer.appendChild(loadTodoDetailsCardView());
   }
-
-  
 
   const openCreateTodoModal = () => {
     const container = get.getContainer();
@@ -74,28 +117,6 @@ const Display = () => {
     const checkMarker = get.getCheckMarker();
     checkMarker.remove();
   }
-  
-  const loadCheckMarker = () => {
-    const checkMarker = document.createElement('i');
-    checkMarker.classList.add('far', 'fa-check-circle');
-  
-    return checkMarker;
-  }
-
-  const loadUncompleteMarker = () => {
-    const UncompleteMarker = document.createElement('i');
-    UncompleteMarker.classList.add('fas', 'fa-check-circle');
-
-    return UncompleteMarker;
-  }
-
-  const loadCompleteMarker = () => {
-    const completeMarker = document.createElement('i');
-    completeMarker.classList.add('far', 'fa-circle');
-
-    return completeMarker;
-  }
-
 
   const changeCategoryInCreateTodoModal = (category) => {
     const categorySelectBtn = get.getTodoInfoCategorySelectBtn();
@@ -103,7 +124,7 @@ const Display = () => {
   }
 
   const placeMarker = (elem) => {
-    const marker = loadCheckMarker();
+    const marker = icon.loadCheckMarker();
     const categoryTitle = elem.childNodes[0];
     const hasMarker = !(categoryTitle.children.length === 0);
     if (!hasMarker) {
@@ -127,13 +148,9 @@ const Display = () => {
     itemsTitle.forEach(item => {
       const categoryTitle = item.textContent;
       if (categoryTitle === selectedCategory) {
-        item.appendChild(loadCheckMarker());
+        item.appendChild(icon.loadCheckMarker());
       }   
     })
-  }
-
-  const createTodo = () => {
-
   }
 
   const activateAddTodoBtn = () => {
@@ -260,6 +277,8 @@ const Display = () => {
     })
   }
 
+
+
   const changeTodoListCardViewTitle = (title) => {
     const todoListHeader = get.getTodoListCardViewHeader();
     todoListHeader.innerText = title;
@@ -270,15 +289,15 @@ const Display = () => {
     changeTodoListCardViewTitle(category);
     // Remove Todo List
     removeTodoList();
-    loadTodos(category);
+    renderTodoList(category);
   }
 
-  const loadTodos = (category) => {
+  const renderTodoList = (category) => {
     const todos = todoList.getTodos(category);
-    todos.forEach(todo => {
-      const todoTitle = todo.getTitle();
-      addTodo(todoTitle);
+    todos.forEach((todo, index) => {
+      addTodo(todo, index);
     })
+    
     
   }
 
@@ -321,16 +340,12 @@ const Display = () => {
   const changeToUncompleteMarker = () => {
     const checkCompleteMarker = get.getCheckCompleteBtn();
     checkCompleteMarker.remove();
-    const uncompleteMarker = loadUncompleteMarker();
-
+    const uncompleteMarker = icon.loadUncompleteMarker();
   }
-
-  
 
   return {
     closeModal,
     attachModalCloser,
-    startListeningClickEvent,
     addTodo,
     showTodoDetailsCardView,
     activateCreateTodoBtn,
@@ -344,6 +359,3 @@ const Display = () => {
 
 
 export { Display };
-
-// <i class="fas fa-chevron-down"></i>
-// <i class="fas fa-chevron-up"></i>
